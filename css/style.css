@@ -34,6 +34,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
 }
 
 ul[class],
@@ -72,4 +73,86 @@ select {
 
 
 
+.container {
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+}
+
+
 /* header */
+
+header {
+  width: 100%;
+  padding-top: 4.125rem;
+}
+.header_wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header_logo {
+  font-size: 0;
+}
+.header_wrapper nav {
+  display: flex;
+  column-gap: 4.375rem;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: #000;
+}
+.header_wrapper nav p {
+  font-style: normal;
+  font-weight: 400;
+}
+.header_wrapper nav a {
+  text-decoration: none;
+  color: #000;
+  border: 3px solid #000;
+  padding: .7rem 2rem;
+  transition: .3s ease-in-out;
+}
+.header_wrapper nav a:hover {
+  background-color: #000;
+  color: #fff;
+}
+.search_ico {
+  font-size: 0;
+}
+.search_ico svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  cursor: pointer;
+}
+.burger {
+  position: relative;
+  width: 4.125rem;
+  height: 1.375rem;
+  cursor: pointer;
+}
+.burger::after,
+.burger::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+.burger::after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.burger::before {
+  top: 0;
+}
+.burger span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 2px;
+  background-color: #000;
+}
