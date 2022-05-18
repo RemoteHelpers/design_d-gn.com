@@ -483,10 +483,15 @@ header {
   height: 100%;
 }
 
-/* .hide_anim {
+.hide {
   visibility: hidden;
   width: 0;
   height: 0;
   opacity: 0;
-  display: none;
-} */
+  transform: .3s;
+}
+.show {
+  opacity: 1;
+  visibility: visible;
+  transform: .3s;
+}
