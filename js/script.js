@@ -54,6 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+  const servicesBtn = document.querySelector('.dropdown_btn');
+
+  servicesBtn.addEventListener('click', event => {
+    event.preventDefault();
+  })
+
+
+
 
 
 
