@@ -55,16 +55,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   const dropdown = document.querySelector('.dropdown'),
-        form = document.querySelector('#form'),
-        topLine = dropdown.querySelector('.dropdown_line'),
-        dropdownBtn = dropdown.querySelector('.dropdown_btn'),
-        dropdownList = dropdown.querySelector('.dropdown_list'),
-        dropdownArrow = dropdown.querySelector('.dropdown_arrow'),
-        dropdownItem = dropdownList.querySelectorAll('.dropdown_item'),
-        hiddenInput = dropdown.querySelector('.dropdown_input_hidden');
+    form = document.querySelector('#form'),
+    jsInput = form.querySelectorAll('.js_input'),
+    inputEmail = form.querySelector('.input_email'),
+    topLine = dropdown.querySelector('.dropdown_line'),
+    dropdownBtn = dropdown.querySelector('.dropdown_btn'),
+    dropdownList = dropdown.querySelector('.dropdown_list'),
+    dropdownArrow = dropdown.querySelector('.dropdown_arrow'),
+    dropdownItem = dropdownList.querySelectorAll('.dropdown_item'),
+    hiddenInput = dropdown.querySelector('.dropdown_input_hidden');
+
+
+
+    function validateEmail(email) {
+      let req = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return req.test(String(email).toLowerCase());
+    }
 
   form.addEventListener('click', event => {
     event.preventDefault();
+
+    let emailVal = inputEmail.value;
+
+    jsInput.forEach(input => {
+      if (input.value === '') {
+        input.classList.add('_error')
+      } else {
+        input.classList.remove('_error')
+      }
+    })
+
+    if (!validateEmail(emailVal)) {
+      inputEmail.classList.add('_error')
+      return false
+    } else {
+      inputEmail.classList.remove('_error')
+    }
+
   })
 
 

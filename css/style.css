@@ -587,7 +587,7 @@ header {
   width: 100%;
   height: auto;
   border: 3px solid #000000;
-  background-color: transparent;
+  background: transparent;
   padding: 1rem;
   margin: 0;
   text-align: center;
@@ -611,6 +611,7 @@ header {
 #form input:focus::placeholder {
   transform: scale(0);
 }
+
 
 .dropdown_arrow {
   margin-left: 1.125rem;
@@ -649,6 +650,11 @@ header {
 
 .dropdown_btn {
   pointer-events: none;
+}
+
+#form input._error {
+  transition: .3s ease-in-out;
+  border: 3px solid red;
 }
 
 
