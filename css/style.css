@@ -129,7 +129,79 @@ header {
   width: 4.125rem;
   height: 1.375rem;
   cursor: pointer;
+  z-index: 1;
 }
+
+.lock {
+  overflow: hidden;
+}
+
+.burger_content {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 224, 71);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s ease-in-out;
+  padding: 4rem 5rem 0;
+}
+._burger_active {
+  top: 0;
+  opacity: 1;
+  visibility: visible;
+}
+.burger_content div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+.burger_content div ul {
+  margin: 0;
+  padding: 0;
+}
+.burger_content div ul li {
+  list-style: none;
+}
+.close_burger {
+  position: relative;
+  width: 2rem;
+  height: 1rem;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+  padding: 1rem;
+}
+.close_burger:hover {
+  transform: rotate(90deg);
+}
+.close_burger::after,
+.close_burger::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  z-index: 1;
+}
+.close_burger::after {
+  content: '';
+  top: 48%;
+  transform: translateY(-50%);
+  transform: rotate(45deg);
+}
+.close_burger::before {
+  content: '';
+  bottom: 48%;
+  transform: translateY(-50%);
+  transform: rotate(-45deg);
+}
+
+
 .burger::after,
 .burger::before {
   content: '';

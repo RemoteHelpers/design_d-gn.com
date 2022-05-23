@@ -67,10 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    function validateEmail(email) {
-      let req = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return req.test(String(email).toLowerCase());
-    }
+  function validateEmail(email) {
+    let req = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return req.test(String(email).toLowerCase());
+  }
 
   form.addEventListener('click', event => {
     event.preventDefault();
@@ -124,6 +124,40 @@ document.addEventListener('DOMContentLoaded', () => {
       dropdownArrow.classList.remove('dropdown_arrow_rotate')
     }
   })
+
+
+
+
+  // Burger
+
+
+
+  const burgerContent = document.querySelectorAll('.burger_content'),
+    burger = document.querySelectorAll('.burger'),
+    closeBurger = document.querySelectorAll('.close_burger');
+
+
+
+  burgerContent.forEach(burgerContentItem => {
+    burger.forEach(burgerItem => {
+      burgerItem.addEventListener('click', () => {
+        burgerContentItem.classList.add('_burger_active')
+        closeBurger.forEach(closeBurgerItem => {
+          closeBurgerItem.addEventListener('click', () => {
+            burgerContentItem.classList.remove('_burger_active')
+          })
+        })
+      })
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+          burgerContentItem.classList.remove('_burger_active')
+        }
+      })
+    })
+  })
+
+
+
 
 
 
