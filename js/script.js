@@ -128,8 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // Burger
-
+  // Burger menu
 
 
   const burgerContent = document.querySelectorAll('.burger_content'),

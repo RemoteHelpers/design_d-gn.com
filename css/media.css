@@ -33,4 +33,52 @@
     background-color: #000;
     color: #fff;
   }
+  .main_info_text {
+    width: 100%;
+  }
+  .main_info_text p {
+    margin: 1.5rem 0 2rem;
+  }
+  .main_info_image {
+    display: none;
+  }
+
+
+  .mobile_info_image {
+    display: block;
+    position: relative;
+    width: 70%;
+    margin: 0 auto 2rem;
+  }
+  .back_photo {
+    position: absolute;
+    top: 1rem;
+  }
+
+
+  .burger_content {
+    padding: 4rem 2rem 0;
+  }
+  .main_page_container main p {
+    padding: .5rem 3rem;
+  }
+  #form {
+    width: 100%;
+    height: auto;
+    margin: 4rem 0 3rem;
+  }
+  .bottom_line {
+    width: 100%;
+    height: 6rem;
+  }
+  .portfolio_btns {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .filter_btn {
+    padding: .5rem 1rem;
+  }
+  .portfolio_cards {
+    margin: 2rem 0;
+  }
 }
