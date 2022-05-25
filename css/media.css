@@ -55,6 +55,9 @@
     top: 1rem;
   }
 
+  .burger {
+    margin-right: 0;
+  }
 
   .burger_content {
     padding: 4rem 2rem 0;

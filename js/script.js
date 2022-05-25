@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('click', event => {
     event.preventDefault();
+    event.stopPropagation();
 
     let emailVal = inputEmail.value;
 
@@ -91,16 +92,23 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       inputEmail.classList.remove('_error')
     }
-
   })
+
 
 
   dropdownItem.forEach(listItem => {
     listItem.addEventListener('click', event => {
       event.stopPropagation();
-      dropdownBtn.innerText += listItem.innerText;
-      hiddenInput.value += listItem.dataset.value;
-      listItem.classList.add('dropdown_item_disabled')
+      if (!listItem.classList.contains('dropdown_item_disabled')) {
+        dropdownBtn.innerText += listItem.innerText;
+        hiddenInput.value += listItem.dataset.value;
+        listItem.classList.add('dropdown_item_disabled');
+      } else {
+        dropdownBtn.innerText = listItem.innerText;
+        hiddenInput.value = listItem.dataset.value;
+        listItem.classList.remove('dropdown_item_disabled');
+      }
+      
     })
   })
 
@@ -124,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
       dropdownArrow.classList.remove('dropdown_arrow_rotate')
     }
   })
-
 
 
 
