@@ -136,35 +136,128 @@ header {
 
 .burger_content {
   position: absolute;
+  display: flex;
   top: -100%;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(255, 224, 71);
+  background: #3D3D3D;
   z-index: 100;
   opacity: 0;
   visibility: hidden;
-  transition: .5s ease-in-out;
-  padding: 4rem 5rem 0;
+  transition: .3s ease-in-out;
+  overflow-y: scroll;
 }
 ._burger_active {
-  top: 0;
   opacity: 1;
+  top: 0;
   visibility: visible;
 }
-.burger_content div {
+
+
+.mobile_icons {
+  display: none;
+}
+
+
+.burger_info_top {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
+  align-items: center;
+}
+
+.burger_info {
+  width: 70%;
+  padding: 4rem 0;
+  position: relative;
+}
+.burger_info::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 90%;
+  height: 100%;
+  background: url('../img/dgn_burger.png') no-repeat left bottom;
+  background-size: contain;
+  z-index: 0;
+}
+
+.burger_text_wrapper {
   width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.burger_content div ul {
+.burger_info_text {
+  color: #fff;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
+  z-index: 10;
+}
+.burger_info_text ul {
   margin: 0;
-  padding: 0;
+  padding-left: 10px;
 }
-.burger_content div ul li {
-  list-style: none;
+.burger_info_text ul li {
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(16px, 2vw, 30px);
+  text-transform: uppercase;
+  color: #FFFFFF;
+  line-height: 3;
 }
+.burger_info_text p {
+  text-transform: lowercase;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(14px, 1.5vw, 26px);
+  color: #E1E1E1;
+  line-height: 1.7;
+}
+
+
+.burger_media {
+  width: 30%;
+  height: 100%;
+  background: #818181;
+  padding: 2rem .5rem;
+  text-align: center;
+  position: relative;
+}
+.burger_media h1 {
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: clamp(30px, 6.9vw, 100px);
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.media_icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.media_icons a {
+  padding: 0 1rem !important;
+  border: 0 !important;
+}
+.media_icons a:hover {
+  background-color: transparent !important;
+}
+
+
+
 .close_burger {
   position: relative;
   width: 2rem;
@@ -183,7 +276,7 @@ header {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #000;
+  background-color: #fff;
   z-index: 1;
 }
 .close_burger::after {
@@ -602,10 +695,48 @@ header {
 
 .card {
   width: 30%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .3s ease-in-out;
 }
 .card img {
   width: 100%;
 }
+
+.card:hover .card_hover {
+  top: 0;
+}
+
+.card_hover {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  background-size: contain;
+  z-index: 1;
+  transition: .3s ease-in-out;
+  color: #fff;
+  padding: 2rem;
+}
+.card_hover ul {
+margin: 0;
+padding: 1.5rem;
+}
+.card_hover p,
+.card_hover ul li {
+  font-style: normal;
+  font-weight: 300;
+  font-size: clamp(14px, 1.5vw, 18px);
+  color: #FFFFFF;
+}
+
+
+
+
+
 
 .card:nth-child(1) {
 align-self: flex-end;

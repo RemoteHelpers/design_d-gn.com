@@ -140,7 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const burgerContent = document.querySelectorAll('.burger_content'),
     burger = document.querySelectorAll('.burger'),
-    closeBurger = document.querySelectorAll('.close_burger');
+    closeBurger = document.querySelectorAll('.close_burger'),
+    section = document.querySelectorAll('.section');
 
 
 
@@ -148,15 +149,24 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.forEach(burgerItem => {
       burgerItem.addEventListener('click', () => {
         burgerContentItem.classList.add('_burger_active')
+        section.forEach(sectionItem => {
+          sectionItem.classList.add('lock')
+        })
         closeBurger.forEach(closeBurgerItem => {
           closeBurgerItem.addEventListener('click', () => {
             burgerContentItem.classList.remove('_burger_active')
+            section.forEach(sectionItem => {
+              sectionItem.classList.remove('lock')
+            })
           })
         })
       })
       document.addEventListener('keydown', event => {
         if (event.key === 'Escape') {
           burgerContentItem.classList.remove('_burger_active')
+          section.forEach(sectionItem => {
+            sectionItem.classList.remove('lock')
+          })
         }
       })
     })

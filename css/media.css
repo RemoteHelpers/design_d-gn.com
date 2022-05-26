@@ -1,7 +1,7 @@
 
 
 @media(max-width: 790px) {
-  .header_wrapper nav p {
+  .burger p {
     display: none;
   }
   .header_wrapper nav a {
@@ -59,9 +59,46 @@
     margin-right: 0;
   }
 
-  .burger_content {
-    padding: 4rem 2rem 0;
+  
+  .media_icons a {
+    display: block !important;
   }
+
+  .media_icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1.5rem;
+  }
+
+
+  .burger_info {
+    width: 100%;
+    padding: 2rem 0;
+  }
+  .burger_text_wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-top: 3rem;
+  }
+  .burger_info_text ul li {
+    line-height: 2;
+    list-style: none;
+  }
+  .burger_info_text div {
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;
+  }
+  .burger_info_text p {
+    padding-left: 10px;
+  }
+
+
+
   .main_page_container main p {
     padding: .5rem 3rem;
   }
