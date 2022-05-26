@@ -106,6 +106,10 @@ header {
   line-height: 2;
 }
 
+.main_info ul li {
+  line-height: 2;
+}
+
 footer {
   padding: 2rem 0;
   background-color: #FFD200;
