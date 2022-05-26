@@ -803,6 +803,7 @@ footer::after {
   background: url('../img/dgn.png') no-repeat bottom left;
   background-size: contain;
   z-index: 0;
+  opacity: .3;
 }
 
 .footer_links {
@@ -824,7 +825,12 @@ footer::after {
   cursor: pointer;
   color: #FFFFFF;
 }
-.privacy p {
+.privacy {
+  position: relative;
+  z-index: 10;
+}
+.privacy p,
+.privacy a {
   font-style: normal;
   font-weight: 300;
   font-size: clamp(14px, 1.38vw, 20px);
