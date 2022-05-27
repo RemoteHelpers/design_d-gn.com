@@ -96,6 +96,9 @@
   .burger_info_text p {
     padding-left: 10px;
   }
+  .burger_info_text div ul a {
+    display: block;
+  }
 
 
 

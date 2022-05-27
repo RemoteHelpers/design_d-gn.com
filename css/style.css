@@ -167,7 +167,7 @@ header {
 }
 
 .burger_info {
-  width: 70%;
+  width: 75%;
   padding: 4rem 0;
   position: relative;
 }
@@ -202,31 +202,42 @@ header {
 }
 .burger_info_text ul {
   margin: 0;
-  padding-left: 10px;
-}
-.burger_info_text ul li {
-  font-style: normal;
-  font-weight: 600;
-  font-size: clamp(16px, 2vw, 30px);
-  text-transform: uppercase;
-  color: #FFFFFF;
-  line-height: 3;
+  padding: 0;
 }
 .burger_info_text p {
   text-transform: lowercase;
   font-style: normal;
   font-weight: 400;
   font-size: clamp(14px, 1.5vw, 26px);
-  color: #E1E1E1;
+  color: #9F9E9E;
   line-height: 1.7;
+}
+
+.burger_info_text div ul a li {
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(16px, 2vw, 30px);
+  text-transform: uppercase;
+  color: #FFFFFF;
+  line-height: 2;
+  transition: .3s ease-in-out;
+}
+.burger_info_text div ul a li:hover {
+  color: #FFD200;
+  background: transparent;
+}
+.burger_info_text div ul a {
+  padding: 0;
+  background: transparent;
+  border: none;
 }
 
 
 .burger_media {
-  width: 30%;
+  width: 25%;
   height: 100%;
   background: #818181;
-  padding: 2rem .5rem;
+  padding: 2.2rem .5rem;
   text-align: center;
   position: relative;
 }
@@ -690,7 +701,7 @@ header {
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin: 5rem 0;
-  row-gap: 1rem;
+  row-gap: 1.5rem;
 }
 
 .card {
@@ -704,34 +715,112 @@ header {
   width: 100%;
 }
 
+
+
+
 .card:hover .card_hover {
   top: 0;
 }
 
 .card_hover {
+  pointer-events: none;
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, .5);
-  background-size: contain;
+  background-color: rgba(0, 0, 0, .7);
+  overflow: hidden;
   z-index: 1;
   transition: .3s ease-in-out;
   color: #fff;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .card_hover ul {
-margin: 0;
-padding: 1.5rem;
+  margin: 0;
+  padding: 1.5rem;
 }
-.card_hover p,
 .card_hover ul li {
   font-style: normal;
-  font-weight: 300;
-  font-size: clamp(14px, 1.5vw, 18px);
+  font-weight: 600;
+  font-size: clamp(14px, 1.7vw, 20px);
+  text-transform: uppercase;
   color: #FFFFFF;
 }
+.card_hover p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: clamp(10px, 1.7vw, 18px);
+  color: #FFFFFF;
+}
+
+
+.popup {
+  position: fixed;
+  top: 400%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #3D3D3D;
+  z-index: 10;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+}
+.popup_active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: .3s ease-in-out;
+}
+.popup_body {
+  position: relative;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup_title {
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+.popup_content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup_close {
+  color: #fff;
+  font-size: 50px;
+  line-height: 1;
+  text-decoration: none;
+  margin-left: 3rem;
+}
+.popup_close img {
+  transition: .3s ease-in-out;
+}
+.popup_close img:hover {
+  transform: rotate(90deg);
+}
+.popup_img img {
+  width: auto;
+  height: 100vh;
+}
+
+
+
 
 
 
@@ -741,7 +830,7 @@ padding: 1.5rem;
 .card:nth-child(1) {
 align-self: flex-end;
 }
-.card:nth-child(2) {
+.card:nth-child(3) {
   align-self: flex-end;
 }
 

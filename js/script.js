@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hiddenInput.value = listItem.dataset.value;
         listItem.classList.remove('dropdown_item_disabled');
       }
-      
+
     })
   })
 
@@ -171,6 +171,48 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
   })
+
+
+
+  // popup
+
+  const popup = document.querySelectorAll('.popup'),
+    popupCard = document.querySelectorAll('.card'),
+    popupClose = document.querySelectorAll('.popup_close');
+
+
+  popupCard.forEach(cardItem => {
+    cardItem.addEventListener('click', () => {
+      popup.forEach(popupItem => {
+        popupItem.classList.add('popup_active')
+
+        document.addEventListener('keydown', event => {
+          if (event.key === 'Escape') {
+            popupItem.classList.remove('popup_active')
+          }
+        })
+
+        section.forEach(sectionItem => {
+          sectionItem.classList.add('lock')
+        })
+
+        popupClose.forEach(popupCloseItem => {
+          popupCloseItem.addEventListener('click', () => {
+
+            popupItem.classList.remove('popup_active')
+            section.forEach(sectionItem => {
+              sectionItem.classList.remove('lock')
+            })
+
+          })
+        })
+      })
+    })
+  })
+
+
+
+
 
 
 
