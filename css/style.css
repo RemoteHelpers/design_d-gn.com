@@ -245,19 +245,31 @@ header {
   font-style: normal;
   font-weight: 600;
   line-height: 1.5;
-  font-size: clamp(30px, 6.9vw, 100px);
+  font-size: clamp(30px, 6.5vw, 95px);
+  text-transform: uppercase;
+  color: #000000;
+  text-align: left;
+}
+
+
+.burger_media h2 {
+  text-align: left;
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(14px, 2vw, 35px);
   text-transform: uppercase;
   color: #000000;
 }
+
+
+
+
 
 .media_icons {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  bottom: 4rem;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;
 }
 .media_icons a {
   padding: 0 1rem !important;
@@ -266,6 +278,24 @@ header {
 .media_icons a:hover {
   background-color: transparent !important;
 }
+.media_icons svg:hover path {
+  transition: .3s;
+  fill: #FFD200;
+  color: #FFD200;
+  stroke: #FFD200;
+}
+
+
+.burger_media_wrapper {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 
 
 
@@ -353,6 +383,18 @@ header {
   font-style: normal;
   font-weight: 600;
   color: #000000;
+}
+.main_page_container main span {
+  color: #fff;
+  background: #000;
+  margin-top: 6rem;
+  font-style: normal;
+  font-weight: 300;
+  font-size: clamp(16px, 2vw, 32px);
+  text-align: center;
+  color: #FFFFFF;
+  padding: .3rem 1rem;
+  line-height: 1.5;
 }
 .main_page_container main h1 {
   font-style: normal;
@@ -445,6 +487,15 @@ header {
 .mobile_btn {
   display: none;
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -568,6 +619,141 @@ header {
   background: conic-gradient(from 95.02deg at 5% 15%, #FFDB33 -17.91deg, #FFE779 6.36deg, #FFDB33 342.09deg, #FFE779 366.36deg);
   overflow-x: hidden;
 }
+
+
+
+
+
+.price_screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 5rem 0;
+  z-index: 20;
+}
+
+.price_text {
+  text-align: right;
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(12px, 1.3vw, 22px);
+  color: #000000;
+  margin-top: 1.875rem;
+}
+
+
+.cards_price_wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.card_price {
+  position: relative;
+  z-index: 10;
+  width: 32%;
+  height: auto;
+  border: 2px solid #000000;
+  overflow: hidden;
+  transition: .3s ease-in-out;
+}
+.card_price:hover {
+  box-shadow: 0 0 20px 0px #000;
+}
+.card_price_content {
+  padding: 2rem 2.5rem;
+  margin-bottom: 8rem;
+}
+
+.card_price_content h1 {
+  margin: 2rem 0;
+  position: absolute;
+  bottom: 3rem;
+}
+.card_price_content h2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(20px, 2.7vw, 40px);
+  text-transform: uppercase;
+  color: #000000;
+}
+.card_price_content p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(16px, 2.2vw, 32px);
+  color: #000000;
+  margin: 1rem 0 0.625rem;
+}
+.card_price_content ul {
+  margin: 0;
+  padding: 0;
+}
+.card_price_content ul li {
+  font-style: normal;
+  font-weight: 300;
+  font-size: clamp(12px, 1.3vw, 22px);
+  color: #000000;
+  list-style: none;
+  position: relative;
+  padding-left: 20px;
+}
+.card_price_content ul li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  background-color: #000;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+}
+
+.card_price_content ul li::marker {
+  width: 5px;
+  height: 5px;
+}
+
+
+.price_link {
+  position: absolute;
+  width: 100%;
+  bottom: 2rem;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.price_link_image{
+  position: relative;
+  left: -5%;
+  width: 100%;
+  height: 100%;
+}
+.price_link a {
+  width: 50%;
+  text-align: center;
+  display: block;
+  background-color: #000;
+  color: #fff;
+  padding: .5rem;
+  margin-right: 1rem;
+  text-decoration: none;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(12px, .5vw 22px);
+  color: #FFFFFF;
+  transition: .3s ease-in-out;
+  border: 2px solid transparent;
+}
+
+.price_link a:hover {
+ border: 2px solid #000;
+ background: transparent;
+ color: #000;
+}
+
 
 
 
@@ -717,7 +903,6 @@ header {
 
 
 
-
 .card:hover .card_hover {
   top: 0;
 }
@@ -760,7 +945,7 @@ header {
 
 .popup {
   position: fixed;
-  top: 400%;
+  top: 500%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -821,33 +1006,6 @@ header {
 
 
 
-
-
-
-
-
-
-.card:nth-child(1) {
-align-self: flex-end;
-}
-.card:nth-child(3) {
-  align-self: flex-end;
-}
-
-
-.hide {
-  visibility: hidden;
-  width: 0;
-  height: 0;
-  opacity: 0;
-  transition: .3s;
-}
-.show {
-  opacity: 1;
-  visibility: visible;
-  transition: .3s;
-}
-
 .contact_wrapper {
   width: 100%;
   height: auto;
@@ -877,7 +1035,6 @@ align-self: flex-end;
   font-style: normal;
   font-weight: 400;
   font-size: clamp(14px, 1.25vw,18px);
-  text-transform: uppercase;
   color: #000000;
   outline: 0;
   outline-offset: 0;

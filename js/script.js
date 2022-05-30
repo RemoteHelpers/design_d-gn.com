@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   let linkArray = document.querySelectorAll('.card'),
-      popupClose = document.querySelectorAll('.popup_close');
+    popupClose = document.querySelectorAll('.popup_close');
 
   linkArray.forEach(item => {
     item.addEventListener('click', event => {
@@ -197,7 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
     item.addEventListener('click', () => {
       let parent = item.parentNode.parentNode.parentNode;
       parent.classList.remove('popup_active');
-      console.log(parent);
     })
   })
 

@@ -86,7 +86,6 @@ select {
 header {
   padding: 1.5rem 0;
   background-color: #FFD200;
-  box-shadow: 0 0 20px 20px #FFD200;
 }
 .header_top {
   width: 100%;
@@ -113,5 +112,4 @@ header {
 footer {
   padding: 2rem 0;
   background-color: #FFD200;
-  box-shadow: 0 0 20px 20px #FFD200;
 }
