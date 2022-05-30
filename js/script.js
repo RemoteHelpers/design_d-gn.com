@@ -174,51 +174,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // popup
 
-  const popup = document.querySelectorAll('.popup'),
-    popupCard = document.querySelectorAll('.card'),
-    popupClose = document.querySelectorAll('.popup_close');
+  // modal-popup
 
 
-  popupCard.forEach(cardItem => {
-    cardItem.addEventListener('click', () => {
-      popup.forEach(popupItem => {
-        popupItem.classList.add('popup_active')
+  let linkArray = document.querySelectorAll('.card'),
+      popupClose = document.querySelectorAll('.popup_close');
 
-        document.addEventListener('keydown', event => {
-          if (event.key === 'Escape') {
-            popupItem.classList.remove('popup_active')
-          }
-        })
+  linkArray.forEach(item => {
+    item.addEventListener('click', event => {
+      event.preventDefault();
 
-        section.forEach(sectionItem => {
-          sectionItem.classList.add('lock')
-        })
+      let modalName = item.getAttribute("data-modal")
+      let modal = document.querySelector('.js-modal[data-modal="' + modalName + '"]');
 
-        popupClose.forEach(popupCloseItem => {
-          popupCloseItem.addEventListener('click', () => {
+      modal.classList.add('popup_active');
 
-            popupItem.classList.remove('popup_active')
-            section.forEach(sectionItem => {
-              sectionItem.classList.remove('lock')
-            })
-
-          })
-        })
-      })
     })
   })
 
-
-
-
-
-
-
-
-
-
+  popupClose.forEach(item => {
+    item.addEventListener('click', () => {
+      let parent = item.parentNode.parentNode.parentNode;
+      parent.classList.remove('popup_active');
+      console.log(parent);
+    })
+  })
 
 
 
