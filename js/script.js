@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   form.addEventListener('click', event => {
-    event.preventDefault();
     event.stopPropagation();
 
     let emailVal = inputEmail.value;
@@ -198,7 +197,38 @@ document.addEventListener('DOMContentLoaded', () => {
       let parent = item.parentNode.parentNode.parentNode;
       parent.classList.remove('popup_active');
     })
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        let parent = item.parentNode.parentNode.parentNode;
+        parent.classList.remove('popup_active');
+      }
+    })
   })
+
+
+
+
+  // sending form
+
+  const sendForm = document.getElementById('form'),
+        sendInput = document.querySelectorAll('.js_input');
+
+
+  const message = {
+    loading: 'Loading...',
+    success: 'Success!',
+    fail: 'Something went wrong...'
+  }
+
+  sendForm.addEventListener('submit', event => {
+    event.preventDefault();
+    
+    const formData = new FormData(sendForm);
+    console.log(formData)
+  })
+
+
+
 
 
 

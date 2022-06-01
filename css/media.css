@@ -49,6 +49,7 @@
     position: relative;
     width: 70%;
     margin: 0 auto 2rem;
+    z-index: 20;
   }
   .back_photo {
     position: absolute;
@@ -74,8 +75,11 @@
 
 
   .burger_info {
-    width: 100%;
+    width: 70%;
     padding: 2rem 0;
+  }
+  .burger_media {
+    width: 30%;
   }
   .burger_text_wrapper {
     display: flex;
@@ -123,5 +127,20 @@
   }
   .portfolio_cards {
     margin: 2rem 0;
+  }
+
+
+  .cards_price_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card_price {
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+  .card_price:last-child {
+    margin-bottom: 0;
   }
 }
