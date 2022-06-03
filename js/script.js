@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   $(document).ready(function () {
     $('#fullpage').fullpage({
       sectionsColor: ['#FFD200', '#FFDF48', '#FFDF48', '#FFDF48', '#FFDF48', '#FFDF48'],
-      scrollingSpeed: 800
+      scrollingSpeed: 800,
+      licenseKey: '4358BF2E-3FE0429E-BF643872-85B662FF'
     });
   });
 
