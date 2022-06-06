@@ -56,45 +56,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   const dropdown = document.querySelector('.dropdown'),
+
     form = document.querySelector('#form'),
-    jsInput = form.querySelectorAll('.js_input'),
+    jsInputs = form.querySelectorAll('.js_input'),
     inputEmail = form.querySelector('.input_email'),
+    inputPhone = form.querySelector('.input_phone'),
+
     topLine = dropdown.querySelector('.dropdown_line'),
     dropdownBtn = dropdown.querySelector('.dropdown_btn'),
     dropdownList = dropdown.querySelector('.dropdown_list'),
     dropdownArrow = dropdown.querySelector('.dropdown_arrow'),
     dropdownItem = dropdownList.querySelectorAll('.dropdown_item'),
+
     hiddenInput = dropdown.querySelector('.dropdown_input_hidden');
 
 
 
-  function validateEmail(email) {
+  function emailValidation(email) {
     let req = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return req.test(String(email).toLowerCase());
   }
 
-  form.addEventListener('click', event => {
-    event.preventDefault();
-    event.stopPropagation();
+  function phoneValidation(phone) {
+    let req = /^[0-9\s]*$/;
+    return req.test(String(phone))
+  }
 
-    let emailVal = inputEmail.value;
 
-    jsInput.forEach(input => {
+  form.onsubmit = function() {
+
+    let emailVal = inputEmail.value,
+        phoneVal = inputPhone.value,
+        emptyInputs = Array.from(jsInputs).filter(input => input.value === '');
+
+
+    jsInputs.forEach(input => {
       if (input.value === '') {
         input.classList.add('_error')
       } else {
         input.classList.remove('_error')
       }
-    })
+    });
 
-    if (!validateEmail(emailVal)) {
+    if (emptyInputs.length !== 0) {
+      return false;
+    }
+
+    if (!emailValidation(emailVal)) {
       inputEmail.classList.add('_error')
-      return false
+      return false;
     } else {
       inputEmail.classList.remove('_error')
     }
-  })
 
+    if (!phoneValidation(phoneVal)) {
+      inputPhone.classList.add('_error')
+      return false;
+    } else {
+      inputPhone.classList.remove('_error')
+    }
+
+  }   
+
+
+
+  // dropdown
 
 
   dropdownItem.forEach(listItem => {
@@ -211,12 +237,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // sending form 
-
-
-  
-
-
-
 
 
 

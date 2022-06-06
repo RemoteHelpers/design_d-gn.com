@@ -564,8 +564,7 @@ header {
   width: 100%;
   height: 15px;
   background: url('../img/arrow.png') no-repeat;
-  background-size: cover;
-  object-fit: cover;
+  background-size: contain;
   z-index: 1;
   transition: .3s ease-in-out;
 }
@@ -675,7 +674,6 @@ header {
   position: relative;
   z-index: 10;
   width: 32%;
-  height: auto;
   border: 3px solid #000000;
   overflow: hidden;
   transition: .3s ease-in-out;
@@ -700,7 +698,7 @@ header {
 .card_price_content h1 {
   margin: 1.5rem 0;
   position: absolute;
-  bottom: 3rem;
+  bottom: 2rem;
   font-size: clamp(16px, 2vw, 40px);
 }
 .card_price_content h2 {
@@ -728,7 +726,7 @@ header {
   font-style: normal;
   font-weight: 500;
   font-size: clamp(12px, 1.1vw, 22px);
-  line-height: 1.8;
+  line-height: 2;
   color: #000000;
   list-style: none;
   position: relative;
@@ -1257,7 +1255,27 @@ header {
 
 #form input._error {
   transition: .3s ease-in-out;
-  border: 2px solid red;
+  border: 2px solid #D74A45;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 

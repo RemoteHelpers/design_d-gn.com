@@ -146,8 +146,20 @@
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .price_screen {
     padding: 1.5rem 0;
+  }
+  .card_price_content {
+    margin-bottom: 4rem;
+  }
+  .price_text {
+    margin-top: 1rem;
+  }
+  .card_price_content ul li {
+    line-height: 1.7;
+  }
+  .card_price_content h1 {
+    font-size: clamp(16px, 1.7vw, 40px);
   }
 }
