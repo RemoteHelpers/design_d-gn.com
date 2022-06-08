@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form = document.querySelector('#form'),
     jsInputs = form.querySelectorAll('.js_input'),
     inputEmail = form.querySelector('.input_email'),
-    inputPhone = form.querySelector('.input_phone'),
+
 
     topLine = dropdown.querySelector('.dropdown_line'),
     dropdownBtn = dropdown.querySelector('.dropdown_btn'),
@@ -77,17 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
     return req.test(String(email).toLowerCase());
   }
 
-  function phoneValidation(phone) {
-    let req = /^[0-9\s]*$/;
-    return req.test(String(phone))
-  }
 
 
-  form.onsubmit = function() {
+  form.onsubmit = function (event) {
+    event.preventDefault();
 
     let emailVal = inputEmail.value,
-        phoneVal = inputPhone.value,
-        emptyInputs = Array.from(jsInputs).filter(input => input.value === '');
+      emptyInputs = Array.from(jsInputs).filter(input => input.value === '');
 
 
     jsInputs.forEach(input => {
@@ -96,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         input.classList.remove('_error')
       }
+
     });
 
     if (emptyInputs.length !== 0) {
@@ -109,33 +106,26 @@ document.addEventListener('DOMContentLoaded', () => {
       inputEmail.classList.remove('_error')
     }
 
-    if (!phoneValidation(phoneVal)) {
-      inputPhone.classList.add('_error')
-      return false;
-    } else {
-      inputPhone.classList.remove('_error')
-    }
-
-  }   
+  }
 
 
 
-  // dropdown
+
+
+  // multiselect
 
 
   dropdownItem.forEach(listItem => {
-    listItem.addEventListener('click', event => {
-      event.stopPropagation();
-      if (!listItem.classList.contains('dropdown_item_disabled')) {
-        dropdownBtn.innerText += listItem.innerText;
-        hiddenInput.value += listItem.dataset.value;
-        listItem.classList.add('dropdown_item_disabled');
-      } else {
-        dropdownBtn.innerText = listItem.innerText;
-        hiddenInput.value = listItem.dataset.value;
-        listItem.classList.remove('dropdown_item_disabled');
-      }
+    listItem.addEventListener('click', e => {
+      e.stopPropagation();
+      const selectInput = listItem.querySelectorAll('.multi_select_input').forEach(item => {
+        const selectValue = item.value;
 
+        if (item.checked) {
+          dropdownBtn.textContent += selectValue
+          hiddenInput.value += selectValue
+        }
+      })
     })
   })
 
@@ -159,6 +149,22 @@ document.addEventListener('DOMContentLoaded', () => {
       dropdownArrow.classList.remove('dropdown_arrow_rotate')
     }
   })
+
+
+
+
+
+
+
+  // scroll to top button
+
+  const scrollBtn = document.querySelector('.scroll_btn');
+  scrollBtn.addEventListener('click', () => {
+    document.scrollTo(0, 0)
+  })
+
+
+
 
 
 

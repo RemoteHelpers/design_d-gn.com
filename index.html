@@ -16,6 +16,11 @@
 <body>
 
 
+  <div class="scroll_btn">
+    <svg width="30" height="14" viewBox="0 0 30 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M29 13L15 1L1 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
 
   <div id="fullpage">
     <div class="section first_section">
@@ -1010,7 +1015,7 @@
                 <div class="top_wrapper">
 
                   <div data-modal="popup_1" class="card branding">
-                    <img src="./img/sort1.png" alt="">
+                    <img src="./img/main_page/prev_main_1.png" alt="">
                     <div class="card_hover">
                       <ul>
                         <li>Graphic design</li>
@@ -1042,7 +1047,7 @@
                       </div>
                       <div class="popup_content">
                         <div class="popup_img">
-                          <img src="./img/sort1.png" alt="sort1">
+                          <img src="./img/main_page/main_1.png" alt="sort1">
                         </div>
                       </div>
                     </div>
@@ -1050,7 +1055,7 @@
     
     
                   <div data-modal="popup_2" class="card branding">
-                    <img src="./img/sort2.png" alt="">
+                    <img src="./img/main_page/prev_main_2.png" alt="">
                     <div class="card_hover">
                       <ul>
                         <li>Graphic design</li>
@@ -1082,7 +1087,7 @@
                       </div>
                       <div class="popup_content">
                         <div class="popup_img">
-                          <img src="./img/sort2.png" alt="sort1">
+                          <img src="./img/main_page/main_2.png" alt="sort1">
                         </div>
                       </div>
                     </div>
@@ -1094,7 +1099,7 @@
                 <div class="bottom_wrapper">
   
                   <div data-modal="popup_4" class="card graphic">
-                    <img src="./img/sort4.png" alt="">
+                    <img src="./img/main_page/prev_main_4.png" alt="">
                     <div class="card_hover">
                       <ul>
                         <li>Graphic design</li>
@@ -1126,7 +1131,7 @@
                       </div>
                       <div class="popup_content">
                         <div class="popup_img">
-                          <img src="./img/sort4.png" alt="sort1">
+                          <img src="./img/main_page/main_4.jpg" alt="sort1">
                         </div>
                       </div>
                     </div>
@@ -1134,7 +1139,7 @@
     
     
                   <div data-modal="popup_5" class="card web">
-                    <img src="./img/sort5.png" alt="">
+                    <img src="./img/main_page/main_5.jpg" alt="">
                     <div class="card_hover">
                       <ul>
                         <li>Web design</li>
@@ -1166,7 +1171,7 @@
                       </div>
                       <div class="popup_content">
                         <div class="popup_img">
-                          <img src="./img/sort5.png" alt="sort1">
+                          <img src="./img/main_page/main_5.jpg" alt="sort1">
                         </div>
                       </div>
                     </div>
@@ -1180,7 +1185,7 @@
               <div class="aside_wrapper">
 
                 <div data-modal="popup_3" class="card graphic">
-                  <img src="./img/sort3.png" alt="">
+                  <img src="./img/main_page/prev_main_3.png" alt="">
                   <div class="card_hover">
                     <ul>
                       <li>Graphic design</li>
@@ -1212,14 +1217,14 @@
                     </div>
                     <div class="popup_content">
                       <div class="popup_img">
-                        <img src="./img/sort3.png" alt="sort1">
+                        <img src="./img/main_page/main_3.jpg" alt="sort1">
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div data-modal="popup_6" class="card web">
-                  <img src="./img/sort6.png" alt="">
+                  <img src="./img/main_page/prev_main_6.png" alt="">
                   <div class="card_hover">
                     <ul>
                       <li>Web design</li>
@@ -1251,7 +1256,7 @@
                     </div>
                     <div class="popup_content">
                       <div class="popup_img">
-                        <img src="./img/sort6.png" alt="sort1">
+                        <img src="./img/main_page/main_6.jpg" alt="sort1">
                       </div>
                     </div>
                   </div>
@@ -1413,10 +1418,12 @@
 
             <form id="form">
 
-              <input class="js_input input_name" type="text" name="name" placeholder="Your name">
-              <input class="js_input input_phone" type="number" name="phone" placeholder="Your phone number">
-              <input class="js_input input_email" type="email" name="email" placeholder="Email adress">
+              <input class="input js_input input_name" type="text" name="name" placeholder="Your name">
+              <input class="input js_input input_phone" type="tel" name="phone" placeholder="Your phone number">
+              <input class="input js_input input_email" type="email" name="email" placeholder="Email adress">
 
+              <!-- multiselect -->
+              
               <div class="dropdown dropdown_validate">
                 <div class="dropdown_line">
                   <span class="dropdown_btn">
@@ -1427,12 +1434,29 @@
                   </div>
                 </div>
                 <ul class="dropdown_list">
-                  <li class="dropdown_item" data-value="Branding"> <span>&nbsp&nbspBranding&nbsp</span> </li>
-                  <li class="dropdown_item" data-value="Graphic"> <span>&nbspGraphic Design&nbsp</span> </li>
-                  <li class="dropdown_item" data-value="Web"> <span>&nbspWeb design&nbsp</span> </li>
+                  <div class="dropdown_item">
+                    <label>
+                      <input class="multi_select_input" type="checkbox" value="Branding ">
+                      <span>Branding</span>
+                    </label>
+                  </div>
+                  <div class="dropdown_item">
+                    <label>
+                      <input class="multi_select_input" type="checkbox" value="Graphic Design ">
+                      <span>Graphic Design</span>
+                    </label>
+                  </div>
+                  <div class="dropdown_item">
+                    <label>
+                      <input class="multi_select_input" type="checkbox" value="Web design ">
+                      <span>Web design</span>
+                    </label>
+                  </div>
                 </ul>
                 <input type="text" name="select_way" value="" class="dropdown_input_hidden js_input">
               </div>
+                            
+              
 
               <button class="submitBtn" type="submit">GET A FREE CONSULTATION</button>
 
