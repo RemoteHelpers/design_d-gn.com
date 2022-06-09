@@ -6,10 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
   $(document).ready(function () {
     $('#fullpage').fullpage({
       sectionsColor: ['#FFD200', '#FFDF48', '#FFDF48', '#FFDF48', '#FFDF48', '#FFDF48'],
+      anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7'],
       scrollingSpeed: 800,
       licenseKey: '4358BF2E-3FE0429E-BF643872-85B662FF'
     });
   });
+
+
+
+
+  $(document).on('click', '#scroll_btn', function () {
+    fullpage_api.moveTo('page1', 1);
+  });
+
+
 
 
   const list = document.querySelector('.portfolio_btns'),
@@ -79,8 +89,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  form.onsubmit = function (event) {
+
+  const url = 'https://crm-s.com/api/v1/leads-public';
+  async function addUserData(userData) {
+    const response = await fetch(url, {
+      method: 'POST',
+      body: userData,
+    });
+    return response.json();
+  }
+
+
+
+  form.addEventListener('submit', event => {
     event.preventDefault();
+    const formData = new FormData(event.currentTarget)
+
+
+    const multiSelectName = formData.get('select_way');
+    formData.set('note', `Selected: ${multiSelectName ? multiSelectName : '- '}`)
+    formData.delete('select_way')
+
+    const newArray = [];
+    formData.forEach((value, name) => {
+      newArray.push([
+        name, value
+      ])
+    })
+    const parsedData = Object.fromEntries(newArray);
+
+    console.log(parsedData);
+
+
+    addUserData(formData)
+      .then(data => console.log(data))
+      .catch(error => console.log(error.message));
+
+
+
+
 
     let emailVal = inputEmail.value,
       emptyInputs = Array.from(jsInputs).filter(input => input.value === '');
@@ -105,8 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       inputEmail.classList.remove('_error')
     }
+  })
 
-  }
+
 
 
 
@@ -153,15 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-  // scroll to top button
-
-  const scrollBtn = document.querySelector('.scroll_btn');
-  scrollBtn.addEventListener('click', () => {
-    document.scrollTo(0, 0)
-  })
 
 
 
