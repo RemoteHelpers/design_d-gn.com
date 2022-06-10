@@ -83,31 +83,35 @@ select {
 }
 
 
-#scroll_btn {
-  display: inline-block;
-  width: 3rem;
-  height: 3rem;
+.app {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.scroll_btn {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
   border: 3px solid #000;
   position: fixed;
   bottom: 2rem;
   right: 1rem;
-  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: .3s ease-in-out;
+  z-index: 1;
 }
-#scroll_btn:hover {
+.scroll_btn:hover {
   background-color: #000;
 }
-#scroll_btn:hover svg path {
+.scroll_btn:hover svg path {
   transition: .3s ease-in-out;
   fill: transparent;
   stroke: #fff;
 }
-
-
 
 
 /* header */
@@ -160,7 +164,6 @@ header {
 .burger p {
   font-family: 'Montserrat', sans-serif;
   margin-left: -5rem;
-  top: 0;
   line-height: .8;
 }
 
@@ -407,7 +410,7 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  z-index: 1;
+  z-index: 10;
 }
 .main_page_container main p {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -462,6 +465,7 @@ header {
   height: 100vh;
   position: relative;
 }
+
 .first_section::after {
   content: '';
   position: fixed;
@@ -481,6 +485,7 @@ header {
   display: flex;
   flex-direction: column;
   row-gap: 1.3rem;
+  z-index: 5;
 }
 .first_section_circles span {
   display: block;
@@ -655,6 +660,7 @@ header {
   }
 }
 
+
 .graphic {
   background: radial-gradient(67.71% 213.99% at 3.85% 73.89%, #FFE779 1.77%, #FFDB33 95.02%);
 }
@@ -729,6 +735,8 @@ header {
   position: absolute;
   bottom: 2rem;
   font-size: clamp(16px, 2vw, 40px);
+  color: #000000;
+  letter-spacing: -1px;
 }
 .card_price_content h2 {
   font-style: normal;
@@ -963,6 +971,10 @@ header {
   background-color: #000;
   color: #fff;
 }
+.filter_btn:hover {
+  background-color: #000;
+  color: #fff;
+}
 
 
 
@@ -989,7 +1001,7 @@ header {
 
 
 
-.portfolio_cards {
+.portfolio_cards-default {
   width: 100%;
   height: 100%;
   display: flex;
@@ -998,7 +1010,20 @@ header {
   flex-wrap: nowrap;
   margin: 5rem 0 15rem;
   column-gap: 1.5rem;
+} 
+.portfolio_cards-branding {
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 5rem 0 15rem;
+  column-gap: 1.5rem;
 }
+
+
+
 
 .left_column_wrapper {
   display: flex;
@@ -1258,50 +1283,6 @@ header {
 
 
 
-/* multiselect */
-
-
-
-.dropdown_arrow {
-  position: rela;
-  margin-left: 1.125rem;
-  pointer-events: none;
-  transition: .3s ease-in-out;
-}
-.dropdown_arrow_rotate {
-  transform: rotate(180deg);
-}
-.dropdown_arrow img {
-  width: 100%;
-  height: 100%;
-}
-
-
-.dropdown_line {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  border: 2px solid #000000;
-  background-color: transparent;
-  padding: 1rem 0;
-  margin: 0;
-  text-align: center;
-  font-style: normal;
-  font-weight: 400;
-  font-size: clamp(14px, 1.25vw,18px);
-  text-transform: uppercase;
-  color: #000000;
-  transition: .3s ease-in-out;
-  cursor: pointer;
-  text-align: center;
-}
-
-.dropdown_btn {
-  pointer-events: none;
-}
-
 
 .dropdown_input_hidden {
   position: absolute;
@@ -1312,44 +1293,9 @@ header {
 }
 
 
+/* multiselect */
 
-.dropdown_list {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  display: none;
-}
 
-.dropdown_list_active {
-  display: block;
-}
-
-.dropdown_item label span {
-  width: 100%;
-  display: inline-block;
-  margin-top: 2rem;
-  padding: .5rem 1rem;
-  border: 2px solid #000;
-  cursor: pointer;
-  transition: .3s ease-in-out;
-  text-align: center;
-  text-transform: uppercase;
-}
-.dropdown_item label span:hover {
-  font-size: 20px;
-  font-weight: 500;
-}
-.dropdown_item label input {
-  position: absolute;
-  width: 0;
-  height: 0;
-  opacity: 0;
-  visibility: hidden;
-}
-.dropdown_item label input:checked + span{
-  font-size: 20px;
-  font-weight: 500;
-}
 
 /* end multiselect */
 

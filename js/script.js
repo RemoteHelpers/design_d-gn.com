@@ -15,70 +15,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  $(document).on('click', '#scroll_btn', function () {
+  $(document).on('click', '.scroll_btn', function () {
     fullpage_api.moveTo('page1', 1);
   });
 
 
 
+  // sort portfolio cards
 
-  const list = document.querySelector('.portfolio_btns'),
-    cards = document.querySelectorAll('.card'),
-    listItems = document.querySelectorAll('.filter_btn');
+  
 
-
-  function filter() {
-    list.addEventListener('click', event => {
-      const targetID = event.target.dataset.id;
-      const target = event.target;
-      console.log(targetID);
-
-      if (target.classList.contains('filter_btn')) {
-        listItems.forEach(listItem => listItem.classList.remove('filter_btn_active'))
-        target.classList.add('filter_btn_active');
-      }
+  
 
 
-      switch (targetID) {
-        case 'branding':
-          getItems(targetID)
-          break;
-        case 'graphic':
-          getItems(targetID)
-          break;
-        case 'web':
-          getItems(targetID)
-          break;
-      }
-    })
-  }
-  filter()
-
-  function getItems(className) {
-    cards.forEach(card => {
-      if (card.classList.contains(className)) {
-        card.style.display = 'block'
-      } else {
-        card.style.display = 'none'
-      }
-    })
-  }
 
 
-  const dropdown = document.querySelector('.dropdown'),
 
-    form = document.querySelector('#form'),
+  // const dropdown = document.querySelector('.dropdown'),
+
+    const form = document.querySelector('#form'),
     jsInputs = form.querySelectorAll('.js_input'),
-    inputEmail = form.querySelector('.input_email'),
+    inputEmail = form.querySelector('.input_email');
 
 
-    topLine = dropdown.querySelector('.dropdown_line'),
-    dropdownBtn = dropdown.querySelector('.dropdown_btn'),
-    dropdownList = dropdown.querySelector('.dropdown_list'),
-    dropdownArrow = dropdown.querySelector('.dropdown_arrow'),
-    dropdownItem = dropdownList.querySelectorAll('.dropdown_item'),
+    // topLine = dropdown.querySelector('.dropdown_line'),
+    // dropdownBtn = dropdown.querySelector('.dropdown_btn'),
+    // dropdownList = dropdown.querySelector('.dropdown_list'),
+    // dropdownArrow = dropdown.querySelector('.dropdown_arrow'),
+    // dropdownItem = dropdownList.querySelectorAll('.dropdown_item'),
 
-    hiddenInput = dropdown.querySelector('.dropdown_input_hidden');
+    // hiddenInput = dropdown.querySelector('.dropdown_input_hidden');
 
 
 
@@ -89,13 +55,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
+  // fetch for sendind form data
   const url = 'https://crm-s.com/api/v1/leads-public';
   async function addUserData(userData) {
     const response = await fetch(url, {
       method: 'POST',
       body: userData,
     });
+    if (response.ok) {
+      alert ('Данные отправлены!')
+    }
+    form.reset()
     return response.json();
   }
 
@@ -105,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget)
 
-
+    // sending form data
     const multiSelectName = formData.get('select_way');
     formData.set('note', `Selected: ${multiSelectName ? multiSelectName : '- '}`)
     formData.delete('select_way')
@@ -125,10 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(data => console.log(data))
       .catch(error => console.log(error.message));
 
-
-
-
-
+    // inputs and email validation
     let emailVal = inputEmail.value,
       emptyInputs = Array.from(jsInputs).filter(input => input.value === '');
 
@@ -163,41 +130,45 @@ document.addEventListener('DOMContentLoaded', () => {
   // multiselect
 
 
-  dropdownItem.forEach(listItem => {
-    listItem.addEventListener('click', e => {
-      e.stopPropagation();
-      const selectInput = listItem.querySelectorAll('.multi_select_input').forEach(item => {
-        const selectValue = item.value;
+  // dropdownItem.forEach(listItem => {
+  //   listItem.addEventListener('click', e => {
+  //     e.stopPropagation();
+  //     const selectInput = listItem.querySelectorAll('.multi_select_input').forEach(item => {
+  //       const selectValue = item.value;
 
-        if (item.checked) {
-          dropdownBtn.textContent += selectValue
-          hiddenInput.value += selectValue
-        }
-      })
-    })
-  })
+  //       if (item.checked) {
+  //         dropdownBtn.innerText += selectValue
+  //         hiddenInput.value += selectValue
+  //       }
 
-
-  topLine.addEventListener('click', () => {
-    dropdownList.classList.toggle('dropdown_list_active');
-    dropdownArrow.classList.toggle('dropdown_arrow_rotate')
-  })
+  //     })
+  //   })
+  // })
 
 
-  document.addEventListener('click', event => {
-    if (event.target !== topLine && event.target !== dropdownList) {
-      dropdownList.classList.remove('dropdown_list_active');
-      dropdownArrow.classList.remove('dropdown_arrow_rotate')
-    }
-  })
+  // topLine.addEventListener('click', () => {
+  //   dropdownList.classList.toggle('dropdown_list_active');
+  //   dropdownArrow.classList.toggle('dropdown_arrow_rotate')
+  // })
 
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
-      dropdownList.classList.remove('dropdown_list_active');
-      dropdownArrow.classList.remove('dropdown_arrow_rotate')
-    }
-  })
 
+  // document.addEventListener('click', event => {
+  //   if (event.target !== topLine && event.target !== dropdownList) {
+  //     dropdownList.classList.remove('dropdown_list_active');
+  //     dropdownArrow.classList.remove('dropdown_arrow_rotate')
+  //   }
+  // })
+
+  // document.addEventListener('keydown', event => {
+  //   if (event.key === 'Escape') {
+  //     dropdownList.classList.remove('dropdown_list_active');
+  //     dropdownArrow.classList.remove('dropdown_arrow_rotate')
+  //   }
+  // })
+
+
+
+  
 
 
 
@@ -220,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
   burgerContent.forEach(burgerContentItem => {
     burger.forEach(burgerItem => {
       burgerItem.addEventListener('click', () => {
+        console.log('click on burger');
         burgerContentItem.classList.add('_burger_active')
         section.forEach(sectionItem => {
           sectionItem.classList.add('lock')
