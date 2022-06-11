@@ -24,8 +24,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // sort portfolio cards
 
   
+  const filterBtn = document.querySelectorAll('.filter_btn');
+  const tabsItems = document.querySelectorAll('.tab_item');
 
+
+  filterBtn.forEach(onTabClick);
+
+  function onTabClick(item) {
+    item.addEventListener('click', () => {
+      let currentBtn = item;
+      let dataId = currentBtn.getAttribute('data-tab');
+      let currentTab = document.querySelector(dataId);
+
+      if (!currentBtn.classList.contains('active')) {
+        filterBtn.forEach(item => {
+          item.classList.remove('active');
+        })
+        tabsItems.forEach(item => {
+          item.classList.remove('active');
+        })
   
+        currentBtn.classList.add('active');
+        currentTab.classList.add('active')
+      }
+    })
+  }
 
 
 
