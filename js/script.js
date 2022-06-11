@@ -51,6 +51,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+  // more cads button in portfolio
+
+  const moreBtn = document.querySelectorAll('.moreBtn'),
+        moreContent = document.querySelectorAll('.more');
+
+  moreBtn.forEach(btn => {
+    moreContent.forEach(item => {
+      const currentContent = item;
+
+      btn.addEventListener('click', () => {
+        currentContent.classList.toggle('more')
+
+        if (!currentContent.classList.contains('more')) {
+          btn.innerHTML = 'show less'
+        } else {
+          btn.innerHTML = 'show more'
+        }
+
+      })
+    })
+  })
+  
+
 
 
 
