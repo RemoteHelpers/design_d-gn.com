@@ -24,9 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // sort portfolio cards
 
   
-  const filterBtn = document.querySelectorAll('.filter_btn');
-  const tabsItems = document.querySelectorAll('.tab_item');
-
+  const filterBtn = document.querySelectorAll('.filter_btn'),
+        tabsItems = document.querySelectorAll('.tab_item');
 
   filterBtn.forEach(onTabClick);
 
@@ -61,12 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const currentContent = item;
 
       btn.addEventListener('click', () => {
-        currentContent.classList.toggle('more')
+        currentContent.classList.toggle('active')
 
-        if (!currentContent.classList.contains('more')) {
-          btn.innerHTML = 'show less'
-        } else {
+        if (!currentContent.classList.contains('active')) {
           btn.innerHTML = 'show more'
+        } else {
+          btn.innerHTML = 'show less'
         }
 
       })
