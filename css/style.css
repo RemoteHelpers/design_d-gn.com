@@ -931,7 +931,7 @@ header {
 
 .show_more_cards {
   position: relative;
-  z-index: 10;
+  z-index: 1;
   width: 100%;
   text-align: center;
   transition: .3s ease-in-out;
@@ -952,6 +952,7 @@ header {
   transition: .3s ease-in-out;
   cursor: pointer;
 }
+
 
 .portfolio_btns {
   width: 70%;
@@ -985,8 +986,6 @@ header {
 
 
 
-
-
 .card {
   width: 100%;
   height: auto;
@@ -1006,7 +1005,9 @@ header {
   transform: scale(1.1);
 }
 
-
+.brand_popup_19 {
+  display: block;
+}
 
 .portfolio_cards-default {
   width: 100%;
@@ -1015,7 +1016,7 @@ header {
   align-items: flex-start;
   justify-content: center;
   flex-wrap: nowrap;
-  margin-bottom: 5rem;
+  padding-bottom: 5rem;
   column-gap: 1.5rem;
 } 
 .portfolio_cards-branding {
@@ -1266,7 +1267,12 @@ header {
   display: block;
 }
 
-
+.branding_wrapper .more {
+  padding-bottom: 17rem;
+}
+.graphic_wrapper .more {
+  padding-bottom: 23rem;
+}
 
 .card_hover {
   pointer-events: none;
@@ -1330,8 +1336,6 @@ header {
 .popup::-webkit-scrollbar {
   width: 0;
 }
-
-
 
 
 .popup {
@@ -1401,7 +1405,23 @@ header {
 }
 
 
-
+.fslightbox-absoluted {
+  background-color: #3D3D3D;
+}
+.fslightbox-toolbar-button:first-child {
+  display: none;
+}
+/* .fslightbox-toolbar-button:last-child {
+  position: relative;
+  top: 3rem;
+  right: 3rem;
+} */
+.fslightbox-slide-btn {
+  background-color: transparent;
+}
+.fslightbox-toolbar {
+  background-color: transparent;
+}
 
 .contact_wrapper {
   width: 100%;

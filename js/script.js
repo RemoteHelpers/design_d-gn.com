@@ -21,11 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
   // sort portfolio cards
 
-  
+
   const filterBtn = document.querySelectorAll('.filter_btn'),
-        tabsItems = document.querySelectorAll('.tab_item');
+    tabsItems = document.querySelectorAll('.tab_item');
 
   filterBtn.forEach(onTabClick);
 
@@ -35,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
       let dataId = currentBtn.getAttribute('data-tab');
       let currentTab = document.querySelector(dataId);
 
+      console.log(currentTab);
+
       if (!currentBtn.classList.contains('active')) {
         filterBtn.forEach(item => {
           item.classList.remove('active');
@@ -42,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tabsItems.forEach(item => {
           item.classList.remove('active');
         })
-  
+
         currentBtn.classList.add('active');
         currentTab.classList.add('active')
       }
@@ -53,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // more cads button in portfolio
 
   const moreBtn = document.querySelectorAll('.moreBtn'),
-        moreContent = document.querySelectorAll('.more');
+    moreContent = document.querySelectorAll('.more');
 
   moreBtn.forEach(btn => {
     moreContent.forEach(item => {
@@ -71,25 +74,25 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
   })
-  
+
 
 
 
 
   // const dropdown = document.querySelector('.dropdown'),
 
-    const form = document.querySelector('#form'),
+  const form = document.querySelector('#form'),
     jsInputs = form.querySelectorAll('.js_input'),
     inputEmail = form.querySelector('.input_email');
 
 
-    // topLine = dropdown.querySelector('.dropdown_line'),
-    // dropdownBtn = dropdown.querySelector('.dropdown_btn'),
-    // dropdownList = dropdown.querySelector('.dropdown_list'),
-    // dropdownArrow = dropdown.querySelector('.dropdown_arrow'),
-    // dropdownItem = dropdownList.querySelectorAll('.dropdown_item'),
+  // topLine = dropdown.querySelector('.dropdown_line'),
+  // dropdownBtn = dropdown.querySelector('.dropdown_btn'),
+  // dropdownList = dropdown.querySelector('.dropdown_list'),
+  // dropdownArrow = dropdown.querySelector('.dropdown_arrow'),
+  // dropdownItem = dropdownList.querySelectorAll('.dropdown_item'),
 
-    // hiddenInput = dropdown.querySelector('.dropdown_input_hidden');
+  // hiddenInput = dropdown.querySelector('.dropdown_input_hidden');
 
 
 
@@ -108,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
       body: userData,
     });
     if (response.ok) {
-      alert ('Данные отправлены!')
+      alert('Данные отправлены!')
     }
     form.reset()
     return response.json();
@@ -213,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  
+
 
 
 
@@ -236,7 +239,6 @@ document.addEventListener('DOMContentLoaded', () => {
   burgerContent.forEach(burgerContentItem => {
     burger.forEach(burgerItem => {
       burgerItem.addEventListener('click', () => {
-        console.log('click on burger');
         burgerContentItem.classList.add('_burger_active')
         section.forEach(sectionItem => {
           sectionItem.classList.add('lock')
@@ -260,43 +262,6 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
   })
-
-
-
-
-  // modal-popup
-
-
-  let linkArray = document.querySelectorAll('.card'),
-    popupClose = document.querySelectorAll('.popup_close');
-
-  linkArray.forEach(item => {
-    item.addEventListener('click', event => {
-      event.preventDefault();
-
-      let modalName = item.getAttribute("data-modal")
-      let modal = document.querySelector('.js-modal[data-modal="' + modalName + '"]');
-
-      modal.classList.add('popup_active');
-
-    })
-  })
-
-  popupClose.forEach(item => {
-    item.addEventListener('click', () => {
-      let parent = item.parentNode.parentNode.parentNode;
-      parent.classList.remove('popup_active');
-    })
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') {
-        let parent = item.parentNode.parentNode.parentNode;
-        parent.classList.remove('popup_active');
-      }
-    })
-  })
-
-
-
 
   // sending form 
 
