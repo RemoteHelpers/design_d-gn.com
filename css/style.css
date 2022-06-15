@@ -985,7 +985,6 @@ header {
 }
 
 
-
 .card {
   width: 100%;
   height: auto;
@@ -1016,7 +1015,7 @@ header {
   align-items: flex-start;
   justify-content: center;
   flex-wrap: nowrap;
-  padding-bottom: 5rem;
+  margin-bottom: 5rem;
   column-gap: 1.5rem;
 } 
 .portfolio_cards-branding {
@@ -1327,7 +1326,7 @@ header {
 .card_hover p {
   font-style: normal;
   font-weight: 300;
-  font-size: clamp(10px, 1.7vw, 18px);
+  font-size: clamp(8px, 1.3vw, 18px);
   color: #FFFFFF;
 }
 
@@ -1412,16 +1411,41 @@ header {
   display: none;
 }
 /* .fslightbox-toolbar-button:last-child {
-  position: relative;
-  top: 3rem;
-  right: 3rem;
+  margin: 2rem 1rem 0 0;
+  background: url('../img/close.png') no-repeat center center;
+  transition: .3s ease-in-out;
+}
+.fslightbox-toolbar-button:last-child svg {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.fslightbox-toolbar-button:last-child:hover {
+  transform: rotate(90deg);
 } */
-.fslightbox-slide-btn {
-  background-color: transparent;
+/* .fslightbox-slide-btn {
+  width: 60px;
+  height: 30px;
+  background: url('../img/slider_arrow.png') no-repeat;
 }
-.fslightbox-toolbar {
-  background-color: transparent;
+.fslightbox-slide-btn-container-next {
+  transform: rotate(180deg);
+  padding: 0;
+  margin-right: 2rem;
 }
+.fslightbox-slide-btn-container-previous {
+  transform: rotate(0);
+  padding: 0;
+  margin-left: 2rem;
+}
+
+.fslightbox-slide-btn svg {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+} */
 
 .contact_wrapper {
   width: 100%;
@@ -1456,6 +1480,7 @@ header {
   outline: 0;
   outline-offset: 0;
   transition: .3s ease-in-out;
+  box-sizing: border-box;
 }
 #form .input::placeholder {
   font-style: normal;
@@ -1471,7 +1496,6 @@ header {
 #form input:focus {
   border: 3px solid #000000;
 }
-
 
 
 
@@ -1615,4 +1639,8 @@ footer::after {
 }
 .privacy a:hover {
   text-decoration: underline;
+}
+
+.dropdown  {
+  width: 100%;
 }

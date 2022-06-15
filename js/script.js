@@ -19,6 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
     fullpage_api.moveTo('page1', 1);
   });
 
+  let sel = document.querySelectorAll('select');
+  M.FormSelect.init(sel);
+
+  document.querySelector('.select-dropdown').placeholder = "SERVICES";
 
 
 
