@@ -13,16 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-
-
   $(document).on('click', '.scroll_btn', function () {
     fullpage_api.moveTo('page1', 1);
   });
 
+
+  // multiselect initialisation
   let sel = document.querySelectorAll('select');
   M.FormSelect.init(sel);
 
-  document.querySelector('.select-dropdown').placeholder = "SERVICES";
+
+  
+  document.querySelector('.select-dropdown').placeholder = "SERVICES  ⯆";
 
 
 
@@ -80,23 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
 
-
-
-
-  // const dropdown = document.querySelector('.dropdown'),
-
   const form = document.querySelector('#form'),
     jsInputs = form.querySelectorAll('.js_input'),
-    inputEmail = form.querySelector('.input_email');
+    inputEmail = form.querySelector('.input_email'),
+    multiSelectInput = form.querySelector('.select-dropdown'),
+    errorName = form.querySelectorAll('.error_name');
 
-
-  // topLine = dropdown.querySelector('.dropdown_line'),
-  // dropdownBtn = dropdown.querySelector('.dropdown_btn'),
-  // dropdownList = dropdown.querySelector('.dropdown_list'),
-  // dropdownArrow = dropdown.querySelector('.dropdown_arrow'),
-  // dropdownItem = dropdownList.querySelectorAll('.dropdown_item'),
-
-  // hiddenInput = dropdown.querySelector('.dropdown_input_hidden');
+    multiSelectInput.name = 'select_way';
+    multiSelectInput.classList.add('input', 'js_input');
 
 
 
@@ -116,11 +109,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     if (response.ok) {
       alert('Данные отправлены!')
+      errorName.forEach(errorNameItem => {
+        errorNameItem.classList.remove('_error_fields')
+      })
     }
     form.reset()
     return response.json();
   }
-
 
 
   form.addEventListener('submit', event => {
@@ -147,16 +142,26 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(data => console.log(data))
       .catch(error => console.log(error.message));
 
+
+
     // inputs and email validation
     let emailVal = inputEmail.value,
-      emptyInputs = Array.from(jsInputs).filter(input => input.value === '');
+        emptyInputs = Array.from(jsInputs).filter(input => input.value === '');
 
 
     jsInputs.forEach(input => {
       if (input.value === '') {
-        input.classList.add('_error')
+        errorName.forEach(errorNameItem => {
+          errorNameItem.classList.add('_error_fields')
+        });
+        input.classList.add('_error');
+        multiSelectInput.classList.add('_error');
       } else {
-        input.classList.remove('_error')
+        errorName.forEach(errorNameItem => {
+          errorNameItem.classList.remove('_error_fields');
+        })
+        input.classList.remove('_error');
+        multiSelectInput.classList.remove('_error');
       }
 
     });
@@ -171,64 +176,10 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       inputEmail.classList.remove('_error')
     }
+
+
+
   })
-
-
-
-
-
-
-
-  // multiselect
-
-
-  // dropdownItem.forEach(listItem => {
-  //   listItem.addEventListener('click', e => {
-  //     e.stopPropagation();
-  //     const selectInput = listItem.querySelectorAll('.multi_select_input').forEach(item => {
-  //       const selectValue = item.value;
-
-  //       if (item.checked) {
-  //         dropdownBtn.innerText += selectValue
-  //         hiddenInput.value += selectValue
-  //       }
-
-  //     })
-  //   })
-  // })
-
-
-  // topLine.addEventListener('click', () => {
-  //   dropdownList.classList.toggle('dropdown_list_active');
-  //   dropdownArrow.classList.toggle('dropdown_arrow_rotate')
-  // })
-
-
-  // document.addEventListener('click', event => {
-  //   if (event.target !== topLine && event.target !== dropdownList) {
-  //     dropdownList.classList.remove('dropdown_list_active');
-  //     dropdownArrow.classList.remove('dropdown_arrow_rotate')
-  //   }
-  // })
-
-  // document.addEventListener('keydown', event => {
-  //   if (event.key === 'Escape') {
-  //     dropdownList.classList.remove('dropdown_list_active');
-  //     dropdownArrow.classList.remove('dropdown_arrow_rotate')
-  //   }
-  // })
-
-
-
-
-
-
-
-
-
-
-
-
 
   // Burger menu
 
@@ -266,9 +217,4 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
   })
-
-  // sending form 
-
-
-
 })
