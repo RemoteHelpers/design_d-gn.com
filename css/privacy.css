@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  scroll-behavior: smooth;
+}
+
+
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+
+.container {
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+}
+
+
+
+
+
+/* header */
+
+header {
+  padding: 1.5rem 0;
+  background-color: #FFD200;
+}
+.header_top {
+  width: 100%;
+}
+.header_logo {
+  font-size: 0;
+}
+
+.main_info {
+  padding: 3rem 0;
+  text-align: justify;
+}
+.main_info h1 {
+  line-height: 3;
+}
+.main_info p {
+  line-height: 2;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.main_info ul li {
+  line-height: 2;
+  font-family: 'Montserrat', sans-serif;
+}
+
+footer {
+  padding: 2rem 0;
+  background-color: #FFD200;
+}
+.scroll_btn {
+  display: none;
+}
