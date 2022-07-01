@@ -163,11 +163,14 @@
     overflow: hidden;
   }
 
+
   /* end mobile full page slider */
 
   .card_price {
     width: 100%;
+    max-width: 350px;
     height: 470px;
+    margin: 0 auto;
   }
   .card_price:last-child {
     margin-bottom: 0;

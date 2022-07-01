@@ -1,0 +1,120 @@
+
+
+
+
+
+.graphic_1 {
+  background: #A7FE4B;
+}
+.graphic_2 {
+  background: radial-gradient(67.71% 213.99% at 3.85% 73.89%, #CAFB96 0%, #A7FE4B 95.02%);
+}
+.graphic_3 {
+  background: radial-gradient(44.43% 140.41% at 104.38% 28.56%, rgba(167, 254, 75, 0.8) 1.77%, #CAFB96 54.17%, #A7FE4B 100%);
+}
+.graphic_4 {
+  background: radial-gradient(67.71% 213.99% at 3.85% 73.89%, rgba(167, 254, 75, 0.65) 1.77%, #A7FE4B 95.02%);
+}
+.graphic_5 {
+  background: radial-gradient(67.71% 213.99% at 3.85% 73.89%, #CAFB96 1.77%, #A7FE4B 95.02%);
+}
+.graphic_6 {
+  background: radial-gradient(44.43% 140.41% at 104.38% 28.56%, rgba(167, 254, 75, 0.8) 1.77%, #CAFB96 54.17%, #A7FE4B 100%);
+}
+.graphic_7 {
+  background: conic-gradient(from 95.02deg at 3.85% 73.89%, #A7FE4B -17.91deg, #CAFB96 6.36deg, #A7FE4B 342.09deg, #CAFB96 366.36deg);
+}
+.graphic_8 {
+  background: conic-gradient(from 95.02deg at 3.85% 73.89%, #A7FE4B -17.91deg, #CAFB96 6.36deg, #A7FE4B 342.09deg, #CAFB96 366.36deg);
+}
+
+
+.burger_info_text div ul a li:hover {
+  color: #A7FE4B !important;
+  background-color: transparent !important;
+}
+
+.media_icons svg:hover path {
+  transition: .3s;
+  fill: #A7FE4B !important;
+  color: #A7FE4B !important;
+  stroke: #A7FE4B !important;
+}
+
+
+
+
+.graphic_1 .main_info_text a {
+  left: 0;
+  padding-left: 40%;
+}
+
+.graphic_1 .main_info_text a::before {
+  content: '';
+  left: 0;
+}
+.graphic_1 .main_info_text a:hover::before {
+  content: '';
+  position: absolute;
+  left: 3%;
+}
+
+.graphic_2 .main_info_section_wrapper,
+.graphic_5 .main_info_section_wrapper {
+  height: 70vh;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.text_correction .main_info_text h1 {
+  font-size: clamp(28px, 3.5vw, 60px);
+}
+
+.text_correction .main_info_text p {
+  margin: 2.2rem 0 0 0;
+}
+p.main_subtitle {
+  font-size: clamp(16px, 1.5vw, 24px) !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400 !important;
+}
+
+.main_info_text p span {
+  margin: 0 1.3rem;
+}
+
+
+.graphic_6 .card_price_modal_calendly {
+  top: 500%;
+}
+
+
+@media(max-width: 790px) {
+  .graphic_1 .main_info_text a::before {
+    content: '';
+    width: 40% !important;
+    top: 60%;
+  }
+
+  
+  .graphic_1 .mobile_info_image {
+    margin: 0 auto 1rem !important;
+  }
+
+  .mobile_info_image {
+    margin: 0 auto !important;
+  }
+  .text_correction .main_info_text {
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+  }
+  .graphic_5 .main_info_text {
+    display: flex;
+    justify-content: flex-end;
+    height: 100vh;
+  }
+  .main_info_text p {
+    margin: 1.5rem 0 0 0 !important;
+  }
+}

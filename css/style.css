@@ -34,7 +34,7 @@ dd {
 
 html,
 body {
-  min-height: 100vh;
+  min-height: 100%;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -42,7 +42,6 @@ body {
   letter-spacing: 1px;
   scroll-behavior: smooth;
 }
-
 
 
 a:not([class]) {
@@ -164,7 +163,7 @@ header {
 
 
 .lock {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .burger_content {
@@ -207,6 +206,19 @@ header {
 .burger_info {
   width: 75%;
   padding: 4rem 0;
+  position: relative;
+}
+.burger_info::before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/footer_dgn.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .burger_text_wrapper {
@@ -466,6 +478,11 @@ header {
   width: 100%;
   height: 100vh;
   position: relative;
+  background: #FFD200;
+  overflow: hidden;
+}
+.second_section {
+  background: #FFDF48;
 }
 
 .first_section::after {
@@ -507,6 +524,7 @@ header {
   left: -10%;
 }
 .ticker h1 {
+  text-transform: uppercase;
   width: 100%;
   color: rgba(251, 251, 251, 0.4);
   font-size: clamp(100px, 34vw, 520px);
@@ -648,6 +666,7 @@ header {
   color: rgba(251, 251, 251, 0.4);
   font-size: clamp(170px, 15.9vw, 230px);
   font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
   font-weight: 900;
   line-height: .7;
   white-space: nowrap;
@@ -676,6 +695,10 @@ header {
 .contact {
   background: conic-gradient(from 95.02deg at 5% 15%, #FFDB33 -17.91deg, #FFE779 6.36deg, #FFDB33 342.09deg, #FFE779 366.36deg);
   overflow-x: hidden;
+}
+
+.pricing {
+  background: conic-gradient(from 95.02deg at 3.85% 73.89%, #FFDB33 -17.91deg, #FFE779 6.36deg, #FFDB33 342.09deg, #FFE779 366.36deg);
 }
 
 
@@ -732,6 +755,58 @@ header {
 .card_price:hover .price_link_image {
   left: -3%;
 }
+
+
+
+
+
+/* calendly modal */
+
+.card_price_modal_calendly {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 400%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .8);
+  z-index: 20;
+  transition: .3s ease-in-out;
+}
+.active_calendly {
+  opacity: 1;
+  visibility: visible;
+  transition: .3s ease-in-out;
+}
+.calendly-inline-widget {
+  width: 100%;
+  height: 100%;
+}
+.card_price_modal_calendly_content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.calendly_close {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  max-width: 100%;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+  z-index: 21;
+}
+.calendly_close:hover {
+  transform: rotate(90deg);
+}
+
+
+/* end calendly modal */
+
+
+
+
 
 
 
@@ -842,44 +917,6 @@ header {
 
 
 
-.main_info_image_wrapper {
-  position: relative;
-}
-
-.back_photo {
-  position: absolute;
-  width: 90%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  max-width: 600px;
-  background-size: cover;
-}
-.web_photo {
-  position: absolute;
-  top: 2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  max-width: 600px;
-  background-size: cover;
-}
-.web_photo img {
-  width: 100%;
-  height: 100%;
-}
-.photo_wrapper {
-  position: relative;
-  width: 100%;
-  height: auto;
-  z-index: 2;
-  max-width: 700px;
-  overflow: hidden;
-}
-.photo_wrapper img {
-  width: 100%;
-  height: 100%;
-}
 
 .portfolio_title {
   width: 100%;
@@ -1544,7 +1581,6 @@ header {
 ._error_fields {
   opacity: 1;
   visibility: visible;
-  height: 100%;
 }
 
 /* input[type="number"]::-webkit-outer-spin-button,

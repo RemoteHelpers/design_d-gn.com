@@ -5,12 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $(document).ready(function () {
     $('#fullpage').fullpage({
-      sectionsColor: ['#FFD200', '#FFDF48', '#FFDF48', '#FFDF48', '#FFDF48', '#FFDF48'],
       anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7'],
       scrollingSpeed: 1000,
       licenseKey: '4358BF2E-3FE0429E-BF643872-85B662FF',
       scrollOverflow: true,
-      // responsiveHeight: 700,
+      // responsiveHeight: 750,
       responsiveSlides: true,
       showActiveTooltip: true,
       slidesNavigation: true,
@@ -28,14 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
   M.FormSelect.init(sel);
 
 
-  
+  // placeholder for multi-select
   document.querySelector('.select-dropdown').placeholder = "SERVICES";
 
 
 
   // sort portfolio cards
-
-
   const filterBtn = document.querySelectorAll('.filter_btn'),
     tabsItems = document.querySelectorAll('.tab_item');
 
@@ -93,8 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
     multiSelectInput = form.querySelector('.select-dropdown'),
     errorName = form.querySelectorAll('.error_name');
 
-    multiSelectInput.name = 'select_way';
-    multiSelectInput.classList.add('input', 'js_input');
+    // add name and classes for multi-select
+  multiSelectInput.name = 'select_way';
+  multiSelectInput.classList.add('input', 'js_input');
 
 
 
@@ -113,10 +111,13 @@ document.addEventListener('DOMContentLoaded', () => {
       body: userData,
     });
     if (response.ok) {
-      alert('Данные отправлены!')
+      alert('Data sent successfully!');
       errorName.forEach(errorNameItem => {
-        errorNameItem.classList.remove('_error_fields')
+        errorNameItem.classList.remove('_error_fields');
       })
+    } else {
+      alert('Please check your details!')
+      return false;
     }
     form.reset()
     return response.json();
@@ -125,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('submit', event => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget)
+    const formData = new FormData(event.currentTarget);
 
     // sending form data
     const multiSelectName = formData.get('select_way');
@@ -151,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // inputs and email validation
     let emailVal = inputEmail.value,
-        emptyInputs = Array.from(jsInputs).filter(input => input.value === '');
+      emptyInputs = Array.from(jsInputs).filter(input => input.value === '');
 
 
     jsInputs.forEach(input => {
@@ -186,9 +187,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   })
 
+
+  
   // Burger menu
-
-
   const burgerContent = document.querySelectorAll('.burger_content'),
     burger = document.querySelectorAll('.burger'),
     closeBurger = document.querySelectorAll('.close_burger'),
@@ -199,6 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
   burgerContent.forEach(burgerContentItem => {
     burger.forEach(burgerItem => {
       burgerItem.addEventListener('click', () => {
+        console.log('click on burger');
         burgerContentItem.classList.add('_burger_active')
         section.forEach(sectionItem => {
           sectionItem.classList.add('lock')
@@ -222,4 +224,49 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
   })
+
+
+
+  // calendly modal
+
+
+  const priceBtn = document.querySelectorAll('.price_btn'),
+        calendlyClose = document.querySelectorAll('.calendly_close');
+
+  priceBtn.forEach(item => {
+    item.addEventListener('click', event => {
+      event.preventDefault();
+
+      let modalId = item.getAttribute('data-modal');
+      let modal = document.querySelector('.card_price_modal_calendly[data-modal="' + modalId + '"]');
+
+      modal.classList.add('active_calendly');
+
+      calendlyClose.forEach(item => {
+        item.addEventListener('click', () => {
+          modal.classList.remove('active_calendly');
+        })
+      })
+      document.addEventListener('keydown', event => {
+        if (event.key === "Escape") {
+          modal.classList.remove('active_calendly');
+        }
+      })
+    })
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 })
