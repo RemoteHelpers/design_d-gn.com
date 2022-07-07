@@ -12,9 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // responsiveHeight: 750,
       responsiveSlides: true,
       showActiveTooltip: true,
-      slidesNavigation: true,
+      slidesNavigation: true
     });
   });
+
+
 
 
   $(document).on('click', '.scroll_btn', function () {
@@ -90,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     multiSelectInput = form.querySelector('.select-dropdown'),
     errorName = form.querySelectorAll('.error_name');
 
-    // add name and classes for multi-select
+  // add name and classes for multi-select
   multiSelectInput.name = 'select_way';
   multiSelectInput.classList.add('input', 'js_input');
 
@@ -124,21 +126,36 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+
+  function isCalendlyEvent(e) {
+    if (e.data.event && e.data.event.indexOf("calendly.event_scheduled") === 0) {
+      console.log(e);
+    }
+  };
+
+  window.addEventListener('message', function (e) {
+    if (isCalendlyEvent(e)) {
+      console.log(e);
+    }
+  });
+
+
+
   form.addEventListener('submit', event => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
 
     // sending form data
     const multiSelectName = formData.get('select_way');
-    formData.set('note', `Selected: ${multiSelectName ? multiSelectName : '- '}`)
-    formData.delete('select_way')
+    formData.set('note', `Selected: ${multiSelectName ? multiSelectName : '- '}`);
+    formData.delete('select_way');
 
     const newArray = [];
     formData.forEach((value, name) => {
       newArray.push([
         name, value
       ])
-    })
+    });
     const parsedData = Object.fromEntries(newArray);
 
     console.log(parsedData);
@@ -182,13 +199,10 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       inputEmail.classList.remove('_error')
     }
-
-
-
   })
 
 
-  
+
   // Burger menu
   const burgerContent = document.querySelectorAll('.burger_content'),
     burger = document.querySelectorAll('.burger'),
@@ -200,7 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
   burgerContent.forEach(burgerContentItem => {
     burger.forEach(burgerItem => {
       burgerItem.addEventListener('click', () => {
-        console.log('click on burger');
         burgerContentItem.classList.add('_burger_active')
         section.forEach(sectionItem => {
           sectionItem.classList.add('lock')
@@ -231,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   const priceBtn = document.querySelectorAll('.price_btn'),
-        calendlyClose = document.querySelectorAll('.calendly_close');
+    calendlyClose = document.querySelectorAll('.calendly_close');
 
   priceBtn.forEach(item => {
     item.addEventListener('click', event => {
@@ -254,16 +267,6 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
   })
-
-
-
-
-
-
-
-
-
-
 
 
 
