@@ -24,12 +24,8 @@
   <script src="<?php echo get_template_directory_uri(); ?>/js/fslightbox.js"></script>
 
   <!-- work api -->
-  <!-- <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script> -->
-
-
-
-  <!-- my testing calendly api -->
   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
   </body>
 </html>

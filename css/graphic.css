@@ -89,6 +89,12 @@ p.main_subtitle {
 }
 
 
+.thank_you_modal {
+  position: fixed;
+  top: 700%;
+}
+
+
 @media(max-width: 790px) {
   .graphic_1 .main_info_text a::before {
     content: '';

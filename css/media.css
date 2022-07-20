@@ -43,10 +43,12 @@
   }
 
   .mobile_info_image {
-    display: block;
+    display: flex;
+    justify-content: center;
     position: relative;
     width: 100%;
-    margin: 0 auto 4rem;
+    max-width: 450px;
+    margin: 0 auto 2rem;
     z-index: 20;
   }
 
@@ -118,48 +120,49 @@
   }
 
 
-  /* mobile full page slider */
+  /* mobile swiper slider */
 
-  .mobile_cards_price_wrapper {
-    display: block;
-    position: relative;
-    margin-bottom: 3.5rem;
+
+
+
+  .mobile_slider {
+    display: block; 
   }
-  .fp-slidesNav {
-    position: absolute;
-    display: flex;
-    top: 65%;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
+  .swiper {
+    padding-bottom: 3rem !important;
+    width: 100%;
+    height: 100%;
   }
-  .fp-slidesNav ul li a {
+  .swiper-pagination {
+    bottom: 0;
+  }
+  .swiper-pagination-bullet {
     width: 1rem;
     height: 1rem;
-    border: 4px solid #000000;
-    background-color: transparent;
     border-radius: 50%;
+    border: 5px solid #000;
+    background-color: transparent;
+    opacity: 1;
   }
-  .fp-slidesNav ul li a.active {
+  .swiper-pagination-bullet-active {
     background-color: #000;
   }
-  .fp-slidesNav ul li a span:last-child {
-    display: none;
+
+
+
+
+
+
+
+
+
+
+
+  .card_price_content h1 {
+    margin: 0 0 2rem 0;
   }
-  .fp-arrow {
-    display: none;
-  }
-  .fp-slidesContainer {
-    width: 100%;
-    overflow: hidden;
-  }
-  .fp-slides {
-    overflow: hidden;
-  }
-  .fp-slide {
-    width: 100%;
-    overflow: hidden;
+  .card_price_content {
+    margin-bottom: 6rem;
   }
 
 
@@ -168,8 +171,10 @@
   .card_price {
     width: 100%;
     max-width: 350px;
-    height: 470px;
+    height: auto;
     margin: 0 auto;
+    position: relative;
+    z-index: 5;
   }
   .card_price:last-child {
     margin-bottom: 0;
@@ -201,16 +206,6 @@
   }
   .burger_content_wrapper {
     position: relative;
-  }
-  .mobile_burger_logo {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 0;
-  }
-  .mobile_burger_logo svg {
-    width: 100%;
   }
   .burger_media {
     position: absolute;
@@ -255,6 +250,9 @@
     width: 100%;
     padding: 1.25rem 0;
   }
+  .burger_info::before {
+    width: 110%;
+  }
   .burger_info_text p {
     color: #E1E1E1;
     padding: 0;
@@ -295,6 +293,40 @@
   .left_column_wrapper .bottom_wrapper {
     width: 100%;
   }
+
+  .vertical_wrapper_portfolio {
+    row-gap: .75rem;
+  }
+  .bottom_wrapper_10_11 {
+    column-gap: .75rem;
+  }
+
+  .left_column_wrapper .bottom_wrapper {
+    row-gap: .75rem;
+  }
+  .bottom_wrapper_13_14 {
+    column-gap: .75rem;
+  }
+  .bottom_wrapper_16_17 {
+    column-gap: .75rem;
+    width: 100%;
+  }
+  .bottom_wrapper_16_17:last-child {
+    width: 100%;
+    align-self: flex-start;
+  }
+
+  .branding_wrapper .more {
+    padding: 0;
+  }
+  .graphic_wrapper .more {
+    padding: 0;
+  }
+
+  .thank_you_modal_content {
+    padding: 4.25rem 0;
+  }
+
   .portfolio_btns {
     margin: 0px auto 3rem auto;
   }
@@ -331,6 +363,13 @@
   .footer_links a {
     line-height: 2;
   }
+
+
+
+
+
+
+
 }
 
 
@@ -350,9 +389,6 @@
 @media (max-width: 1280px) {
   .price_screen {
     padding: 1.5rem 0;
-  }
-  .card_price_content {
-    margin-bottom: 4rem;
   }
   .price_text {
     margin-top: 1rem;

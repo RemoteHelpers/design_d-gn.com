@@ -12,27 +12,51 @@
  * @package design
  */
 
+
+
+
+ // styles-initialization
+ wp_register_style('styles', get_template_directory_uri().'/css/style.css', '', '0.0000', false);
+ wp_enqueue_style('styles');
+
+ wp_register_style('media-styles', get_template_directory_uri().'/css/media.css', '', '0.0000', false);
+ wp_enqueue_style('media-styles');
+
+ wp_register_style('materialize', get_template_directory_uri().'/css/materialize.css', '', '0.0000', false);
+ wp_enqueue_style('materialize');
+
+ wp_register_style('fullpage', get_template_directory_uri().'/css/fullpage.min.css', '', '0.0000', false);
+ wp_enqueue_style('fullpage');
+
+ // scripts-initialization 
+ wp_register_script( 'scripts', get_template_directory_uri().'/js/script.js', '', '0.0000', false);
+ wp_enqueue_script( 'scripts' );
+
+ wp_register_script( 'materialize-js', get_template_directory_uri().'/js/materialize.min.js', '', '0.0000', false);
+ wp_enqueue_script( 'materialize-js' );
+
+ wp_register_script( 'fullpage-js', get_template_directory_uri().'/js/fullpage.min.js', '', '0.0000', false);
+ wp_enqueue_script( 'fullpage-js' );
+
+ 
+ wp_register_script( 'lottie', 'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js' );
+ wp_enqueue_script( 'lottie' );
+
+
+
+
 get_header();
 ?>
 
 	<main id="primary" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+	
+	
 
-			get_template_part( 'template-parts/content', 'page' );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
 
-		endwhile; // End of the loop.
-		?>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

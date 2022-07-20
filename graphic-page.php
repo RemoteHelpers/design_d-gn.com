@@ -49,11 +49,11 @@ get_header();
         </div>
         <nav>
 
-          <div class="burger">
+          <div class="burger" data-id="menu_1">
             <p>menu</p>
-            <span></span>
+            <img data-src="/wp-content/uploads/2022/07/burger_lines.png" alt="burger">
           </div>
-          <div class="burger_content">
+          <div class="burger_content" data-id="menu_1">
             <div class="burger_content_wrapper">
               <div class="burger_info">
                 <div class="container">
@@ -76,10 +76,9 @@ get_header();
                   </div>
                   <div class="burger_text_wrapper">
                     <div class="burger_info_text">
-
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(22); ?>">
                             <li>Graphic design</li>
                           </a>
                         </ul>
@@ -92,7 +91,7 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(24); ?>">
                             <li>Web-design</li>
                           </a>
                         </ul>
@@ -105,8 +104,8 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
-                            <li>Branding</li>
+                          <a href="<?php the_permalink(17); ?>">
+                            <li>Illustration</li>
                           </a>
                         </ul>
                         <p>brandbook</p>
@@ -133,7 +132,7 @@ get_header();
                           fill="black" />
                       </svg>
                     </a>
-                    <a href="tel:+380997101033">
+                    <a href="https://api.whatsapp.com/send?phone=380997101033" target="_blank">
                       <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M38 9.25C32 -5.96046e-07 19.75 -2.75 10.25 3C0.999998 8.75 -2 21.25 4 30.5L4.5 31.25L2.5 38.75L10 36.75L10.75 37.25C14 39 17.5 40 21 40C24.75 40 28.5 39 31.75 37C41 31 43.75 18.75 38 9.25ZM32.75 28.5C31.75 30 30.5 31 28.75 31.25C27.75 31.25 26.5 31.75 21.5 29.75C17.25 27.75 13.75 24.5 11.25 20.75C9.75 19 9 16.75 8.75 14.5C8.75 12.5 9.5 10.75 10.75 9.5C11.25 9 11.75 8.75 12.25 8.75H13.5C14 8.75 14.5 8.75 14.75 9.75C15.25 11 16.5 14 16.5 14.25C16.75 14.5 16.75 15 16.5 15.25C16.75 15.75 16.5 16.25 16.25 16.5C16 16.75 15.75 17.25 15.5 17.5C15 17.75 14.75 18.25 15 18.75C16 20.25 17.25 21.75 18.5 23C20 24.25 21.5 25.25 23.25 26C23.75 26.25 24.25 26.25 24.5 25.75C24.75 25.25 26 24 26.5 23.5C27 23 27.25 23 27.75 23.25L31.75 25.25C32.25 25.5 32.75 25.75 33 26C33.25 26.75 33.25 27.75 32.75 28.5Z"
@@ -152,23 +151,11 @@ get_header();
                   </div>
                 </div>
               </div>
-              <div class="mobile_burger_logo">
-                <svg viewBox="0 0 375 123" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M-8 2.99453H56.0252C70.5004 2.99453 83.2436 5.67714 94.2547 11.0424C105.389 16.2828 113.988 23.8315 120.05 33.6885C126.236 43.5455 129.329 55.1494 129.329 68.5C129.329 81.8506 126.236 93.4545 120.05 103.311C113.988 113.168 105.389 120.78 94.2547 126.145C83.2436 131.385 70.5004 134.005 56.0252 134.005H-8V2.99453ZM54.1694 99.5683C63.5721 99.5683 71.0572 96.8857 76.6246 91.5205C82.3157 86.0305 85.1613 78.357 85.1613 68.5C85.1613 58.643 82.3157 51.0319 76.6246 45.6667C71.0572 40.1767 63.5721 37.4317 54.1694 37.4317H35.7969V99.5683H54.1694Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M231.245 64.944H269.289V120.343C261.618 125.708 252.71 129.826 242.565 132.695C232.42 135.565 222.461 137 212.687 137C198.83 137 186.396 134.13 175.385 128.391C164.374 122.526 155.714 114.416 149.404 104.06C143.218 93.5792 140.125 81.7259 140.125 68.5C140.125 55.2741 143.218 43.4831 149.404 33.127C155.714 22.6462 164.436 14.536 175.571 8.79645C186.829 2.93215 199.511 0 213.615 0C226.358 0 237.74 2.18351 247.761 6.55054C257.906 10.7928 266.319 17.0314 273 25.2664L244.978 50.1585C236.812 40.551 227.1 35.7473 215.842 35.7473C206.191 35.7473 198.521 38.6794 192.83 44.5437C187.139 50.408 184.293 58.3934 184.293 68.5C184.293 78.357 187.077 86.2801 192.644 92.2691C198.335 98.2582 205.882 101.253 215.285 101.253C220.852 101.253 226.172 100.192 231.245 98.071V64.944Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M416 2.99453V134.005H379.997L330.633 74.4891V134.005H287.95V2.99453H323.952L373.317 62.5109V2.99453H416Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                </svg>
-              </div>
+
             </div>
 
           </div>
-          <a href="#form">get consultation</a>
+          <a href="#page8">get consultation</a>
         </nav>
       </div>
       <div class="main_info_section_wrapper">
@@ -177,9 +164,9 @@ get_header();
           <p>Get services from remote specialists who will visualize your ideas.</p>
           <div class="mobile_info_image">
             <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_eqf3fknf.json" background="transparent"
-              speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+              speed="1" style="width: 90%; height: 90%;" loop autoplay></lottie-player>
           </div>
-          <a href="##">CONTACT US NOW</a>
+          <a href="#page8">CONTACT US NOW</a>
         </div>
         <div class="main_info_image">
           <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_eqf3fknf.json" background="transparent"
@@ -204,11 +191,11 @@ get_header();
         </div>
         <nav>
 
-          <div class="burger">
+          <div class="burger" data-id="menu_2">
             <p>menu</p>
-            <span></span>
+            <img data-src="/wp-content/uploads/2022/07/burger_lines.png" alt="burger">
           </div>
-          <div class="burger_content">
+          <div class="burger_content" data-id="menu_2">
             <div class="burger_content_wrapper">
               <div class="burger_info">
                 <div class="container">
@@ -231,10 +218,9 @@ get_header();
                   </div>
                   <div class="burger_text_wrapper">
                     <div class="burger_info_text">
-
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(22); ?>">
                             <li>Graphic design</li>
                           </a>
                         </ul>
@@ -247,7 +233,7 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(24); ?>">
                             <li>Web-design</li>
                           </a>
                         </ul>
@@ -260,8 +246,8 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
-                            <li>Branding</li>
+                          <a href="<?php the_permalink(17); ?>">
+                            <li>Illustration</li>
                           </a>
                         </ul>
                         <p>brandbook</p>
@@ -288,7 +274,7 @@ get_header();
                           fill="black" />
                       </svg>
                     </a>
-                    <a href="tel:+380997101033">
+                    <a href="https://api.whatsapp.com/send?phone=380997101033" target="_blank">
                       <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M38 9.25C32 -5.96046e-07 19.75 -2.75 10.25 3C0.999998 8.75 -2 21.25 4 30.5L4.5 31.25L2.5 38.75L10 36.75L10.75 37.25C14 39 17.5 40 21 40C24.75 40 28.5 39 31.75 37C41 31 43.75 18.75 38 9.25ZM32.75 28.5C31.75 30 30.5 31 28.75 31.25C27.75 31.25 26.5 31.75 21.5 29.75C17.25 27.75 13.75 24.5 11.25 20.75C9.75 19 9 16.75 8.75 14.5C8.75 12.5 9.5 10.75 10.75 9.5C11.25 9 11.75 8.75 12.25 8.75H13.5C14 8.75 14.5 8.75 14.75 9.75C15.25 11 16.5 14 16.5 14.25C16.75 14.5 16.75 15 16.5 15.25C16.75 15.75 16.5 16.25 16.25 16.5C16 16.75 15.75 17.25 15.5 17.5C15 17.75 14.75 18.25 15 18.75C16 20.25 17.25 21.75 18.5 23C20 24.25 21.5 25.25 23.25 26C23.75 26.25 24.25 26.25 24.5 25.75C24.75 25.25 26 24 26.5 23.5C27 23 27.25 23 27.75 23.25L31.75 25.25C32.25 25.5 32.75 25.75 33 26C33.25 26.75 33.25 27.75 32.75 28.5Z"
@@ -307,22 +293,10 @@ get_header();
                   </div>
                 </div>
               </div>
-              <div class="mobile_burger_logo">
-                <svg viewBox="0 0 375 123" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M-8 2.99453H56.0252C70.5004 2.99453 83.2436 5.67714 94.2547 11.0424C105.389 16.2828 113.988 23.8315 120.05 33.6885C126.236 43.5455 129.329 55.1494 129.329 68.5C129.329 81.8506 126.236 93.4545 120.05 103.311C113.988 113.168 105.389 120.78 94.2547 126.145C83.2436 131.385 70.5004 134.005 56.0252 134.005H-8V2.99453ZM54.1694 99.5683C63.5721 99.5683 71.0572 96.8857 76.6246 91.5205C82.3157 86.0305 85.1613 78.357 85.1613 68.5C85.1613 58.643 82.3157 51.0319 76.6246 45.6667C71.0572 40.1767 63.5721 37.4317 54.1694 37.4317H35.7969V99.5683H54.1694Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M231.245 64.944H269.289V120.343C261.618 125.708 252.71 129.826 242.565 132.695C232.42 135.565 222.461 137 212.687 137C198.83 137 186.396 134.13 175.385 128.391C164.374 122.526 155.714 114.416 149.404 104.06C143.218 93.5792 140.125 81.7259 140.125 68.5C140.125 55.2741 143.218 43.4831 149.404 33.127C155.714 22.6462 164.436 14.536 175.571 8.79645C186.829 2.93215 199.511 0 213.615 0C226.358 0 237.74 2.18351 247.761 6.55054C257.906 10.7928 266.319 17.0314 273 25.2664L244.978 50.1585C236.812 40.551 227.1 35.7473 215.842 35.7473C206.191 35.7473 198.521 38.6794 192.83 44.5437C187.139 50.408 184.293 58.3934 184.293 68.5C184.293 78.357 187.077 86.2801 192.644 92.2691C198.335 98.2582 205.882 101.253 215.285 101.253C220.852 101.253 226.172 100.192 231.245 98.071V64.944Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M416 2.99453V134.005H379.997L330.633 74.4891V134.005H287.95V2.99453H323.952L373.317 62.5109V2.99453H416Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                </svg>
-              </div>
+
             </div>
           </div>
-          <a href="#form">get consultation</a>
+          <a href="#page8">get consultation</a>
         </nav>
       </div>
       <div class="main_info_section_wrapper">
@@ -333,7 +307,7 @@ get_header();
           <p class="main_subtitle">Get services from remote specialists who will visualize your ideas.</p>
           <div class="mobile_info_image">
             <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_2uckcxbq.json" background="transparent"
-              speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+              speed="1" style="width: 90%; height: 90%;" loop autoplay></lottie-player>
           </div>
         </div>
         <div class="main_info_image">
@@ -359,11 +333,11 @@ get_header();
         </div>
         <nav>
 
-          <div class="burger">
+          <div class="burger" data-id="menu_3">
             <p>menu</p>
-            <span></span>
+            <img data-src="/wp-content/uploads/2022/07/burger_lines.png" alt="burger">
           </div>
-          <div class="burger_content">
+          <div class="burger_content" data-id="menu_3">
             <div class="burger_content_wrapper">
               <div class="burger_info">
                 <div class="container">
@@ -386,10 +360,9 @@ get_header();
                   </div>
                   <div class="burger_text_wrapper">
                     <div class="burger_info_text">
-
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(22); ?>">
                             <li>Graphic design</li>
                           </a>
                         </ul>
@@ -402,7 +375,7 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(24); ?>">
                             <li>Web-design</li>
                           </a>
                         </ul>
@@ -415,8 +388,8 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
-                            <li>Branding</li>
+                          <a href="<?php the_permalink(17); ?>">
+                            <li>Illustration</li>
                           </a>
                         </ul>
                         <p>brandbook</p>
@@ -443,7 +416,7 @@ get_header();
                           fill="black" />
                       </svg>
                     </a>
-                    <a href="tel:+380997101033">
+                    <a href="https://api.whatsapp.com/send?phone=380997101033" target="_blank">
                       <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M38 9.25C32 -5.96046e-07 19.75 -2.75 10.25 3C0.999998 8.75 -2 21.25 4 30.5L4.5 31.25L2.5 38.75L10 36.75L10.75 37.25C14 39 17.5 40 21 40C24.75 40 28.5 39 31.75 37C41 31 43.75 18.75 38 9.25ZM32.75 28.5C31.75 30 30.5 31 28.75 31.25C27.75 31.25 26.5 31.75 21.5 29.75C17.25 27.75 13.75 24.5 11.25 20.75C9.75 19 9 16.75 8.75 14.5C8.75 12.5 9.5 10.75 10.75 9.5C11.25 9 11.75 8.75 12.25 8.75H13.5C14 8.75 14.5 8.75 14.75 9.75C15.25 11 16.5 14 16.5 14.25C16.75 14.5 16.75 15 16.5 15.25C16.75 15.75 16.5 16.25 16.25 16.5C16 16.75 15.75 17.25 15.5 17.5C15 17.75 14.75 18.25 15 18.75C16 20.25 17.25 21.75 18.5 23C20 24.25 21.5 25.25 23.25 26C23.75 26.25 24.25 26.25 24.5 25.75C24.75 25.25 26 24 26.5 23.5C27 23 27.25 23 27.75 23.25L31.75 25.25C32.25 25.5 32.75 25.75 33 26C33.25 26.75 33.25 27.75 32.75 28.5Z"
@@ -462,22 +435,10 @@ get_header();
                   </div>
                 </div>
               </div>
-              <div class="mobile_burger_logo">
-                <svg viewBox="0 0 375 123" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M-8 2.99453H56.0252C70.5004 2.99453 83.2436 5.67714 94.2547 11.0424C105.389 16.2828 113.988 23.8315 120.05 33.6885C126.236 43.5455 129.329 55.1494 129.329 68.5C129.329 81.8506 126.236 93.4545 120.05 103.311C113.988 113.168 105.389 120.78 94.2547 126.145C83.2436 131.385 70.5004 134.005 56.0252 134.005H-8V2.99453ZM54.1694 99.5683C63.5721 99.5683 71.0572 96.8857 76.6246 91.5205C82.3157 86.0305 85.1613 78.357 85.1613 68.5C85.1613 58.643 82.3157 51.0319 76.6246 45.6667C71.0572 40.1767 63.5721 37.4317 54.1694 37.4317H35.7969V99.5683H54.1694Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M231.245 64.944H269.289V120.343C261.618 125.708 252.71 129.826 242.565 132.695C232.42 135.565 222.461 137 212.687 137C198.83 137 186.396 134.13 175.385 128.391C164.374 122.526 155.714 114.416 149.404 104.06C143.218 93.5792 140.125 81.7259 140.125 68.5C140.125 55.2741 143.218 43.4831 149.404 33.127C155.714 22.6462 164.436 14.536 175.571 8.79645C186.829 2.93215 199.511 0 213.615 0C226.358 0 237.74 2.18351 247.761 6.55054C257.906 10.7928 266.319 17.0314 273 25.2664L244.978 50.1585C236.812 40.551 227.1 35.7473 215.842 35.7473C206.191 35.7473 198.521 38.6794 192.83 44.5437C187.139 50.408 184.293 58.3934 184.293 68.5C184.293 78.357 187.077 86.2801 192.644 92.2691C198.335 98.2582 205.882 101.253 215.285 101.253C220.852 101.253 226.172 100.192 231.245 98.071V64.944Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M416 2.99453V134.005H379.997L330.633 74.4891V134.005H287.95V2.99453H323.952L373.317 62.5109V2.99453H416Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                </svg>
-              </div>
+
             </div>
           </div>
-          <a href="#form">get consultation</a>
+          <a href="#page8">get consultation</a>
         </nav>
       </div>
       <div class="main_info_section_wrapper">
@@ -489,12 +450,12 @@ get_header();
             remote specialists.</p>
           <div class="mobile_info_image">
             <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_rh5f594b.json" background="transparent"
-              speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+              speed="1" style="width: 90%; height: 90%;" loop autoplay></lottie-player>
           </div>
         </div>
         <div class="main_info_image">
           <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_rh5f594b.json" background="transparent"
-            speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+            speed="1" style="width: 90%; height: 90%;" loop autoplay></lottie-player>
         </div>
       </div>
     </div>
@@ -515,11 +476,11 @@ get_header();
         </div>
         <nav>
 
-          <div class="burger">
+          <div class="burger" data-id="menu_4">
             <p>menu</p>
-            <span></span>
+            <img data-src="/wp-content/uploads/2022/07/burger_lines.png" alt="burger">
           </div>
-          <div class="burger_content">
+          <div class="burger_content" data-id="menu_4">
             <div class="burger_content_wrapper">
               <div class="burger_info">
                 <div class="container">
@@ -542,10 +503,9 @@ get_header();
                   </div>
                   <div class="burger_text_wrapper">
                     <div class="burger_info_text">
-
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(22); ?>">
                             <li>Graphic design</li>
                           </a>
                         </ul>
@@ -558,7 +518,7 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(24); ?>">
                             <li>Web-design</li>
                           </a>
                         </ul>
@@ -571,8 +531,8 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
-                            <li>Branding</li>
+                          <a href="<?php the_permalink(17); ?>">
+                            <li>Illustration</li>
                           </a>
                         </ul>
                         <p>brandbook</p>
@@ -599,7 +559,7 @@ get_header();
                           fill="black" />
                       </svg>
                     </a>
-                    <a href="tel:+380997101033">
+                    <a href="https://api.whatsapp.com/send?phone=380997101033" target="_blank">
                       <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M38 9.25C32 -5.96046e-07 19.75 -2.75 10.25 3C0.999998 8.75 -2 21.25 4 30.5L4.5 31.25L2.5 38.75L10 36.75L10.75 37.25C14 39 17.5 40 21 40C24.75 40 28.5 39 31.75 37C41 31 43.75 18.75 38 9.25ZM32.75 28.5C31.75 30 30.5 31 28.75 31.25C27.75 31.25 26.5 31.75 21.5 29.75C17.25 27.75 13.75 24.5 11.25 20.75C9.75 19 9 16.75 8.75 14.5C8.75 12.5 9.5 10.75 10.75 9.5C11.25 9 11.75 8.75 12.25 8.75H13.5C14 8.75 14.5 8.75 14.75 9.75C15.25 11 16.5 14 16.5 14.25C16.75 14.5 16.75 15 16.5 15.25C16.75 15.75 16.5 16.25 16.25 16.5C16 16.75 15.75 17.25 15.5 17.5C15 17.75 14.75 18.25 15 18.75C16 20.25 17.25 21.75 18.5 23C20 24.25 21.5 25.25 23.25 26C23.75 26.25 24.25 26.25 24.5 25.75C24.75 25.25 26 24 26.5 23.5C27 23 27.25 23 27.75 23.25L31.75 25.25C32.25 25.5 32.75 25.75 33 26C33.25 26.75 33.25 27.75 32.75 28.5Z"
@@ -618,22 +578,10 @@ get_header();
                   </div>
                 </div>
               </div>
-              <div class="mobile_burger_logo">
-                <svg viewBox="0 0 375 123" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M-8 2.99453H56.0252C70.5004 2.99453 83.2436 5.67714 94.2547 11.0424C105.389 16.2828 113.988 23.8315 120.05 33.6885C126.236 43.5455 129.329 55.1494 129.329 68.5C129.329 81.8506 126.236 93.4545 120.05 103.311C113.988 113.168 105.389 120.78 94.2547 126.145C83.2436 131.385 70.5004 134.005 56.0252 134.005H-8V2.99453ZM54.1694 99.5683C63.5721 99.5683 71.0572 96.8857 76.6246 91.5205C82.3157 86.0305 85.1613 78.357 85.1613 68.5C85.1613 58.643 82.3157 51.0319 76.6246 45.6667C71.0572 40.1767 63.5721 37.4317 54.1694 37.4317H35.7969V99.5683H54.1694Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M231.245 64.944H269.289V120.343C261.618 125.708 252.71 129.826 242.565 132.695C232.42 135.565 222.461 137 212.687 137C198.83 137 186.396 134.13 175.385 128.391C164.374 122.526 155.714 114.416 149.404 104.06C143.218 93.5792 140.125 81.7259 140.125 68.5C140.125 55.2741 143.218 43.4831 149.404 33.127C155.714 22.6462 164.436 14.536 175.571 8.79645C186.829 2.93215 199.511 0 213.615 0C226.358 0 237.74 2.18351 247.761 6.55054C257.906 10.7928 266.319 17.0314 273 25.2664L244.978 50.1585C236.812 40.551 227.1 35.7473 215.842 35.7473C206.191 35.7473 198.521 38.6794 192.83 44.5437C187.139 50.408 184.293 58.3934 184.293 68.5C184.293 78.357 187.077 86.2801 192.644 92.2691C198.335 98.2582 205.882 101.253 215.285 101.253C220.852 101.253 226.172 100.192 231.245 98.071V64.944Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M416 2.99453V134.005H379.997L330.633 74.4891V134.005H287.95V2.99453H323.952L373.317 62.5109V2.99453H416Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                </svg>
-              </div>
+
             </div>
           </div>
-          <a href="#form">get consultation</a>
+          <a href="#page8">get consultation</a>
         </nav>
       </div>
       <div class="main_info_section_wrapper">
@@ -644,12 +592,12 @@ get_header();
             a catchy image for your packaging.</p>
           <div class="mobile_info_image">
             <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_d0uidtr3.json" background="transparent"
-              speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+              speed="1" style="width: 90%; height: 90%;" loop autoplay></lottie-player>
           </div>
         </div>
         <div class="main_info_image">
           <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_d0uidtr3.json" background="transparent"
-            speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+            speed="1" style="width: 90%; height: 90%;" loop autoplay></lottie-player>
         </div>
       </div>
     </div>
@@ -670,11 +618,11 @@ get_header();
         </div>
         <nav>
 
-          <div class="burger">
+          <div class="burger" data-id="menu_5">
             <p>menu</p>
-            <span></span>
+            <img data-src="/wp-content/uploads/2022/07/burger_lines.png" alt="burger">
           </div>
-          <div class="burger_content">
+          <div class="burger_content" data-id="menu_5">
             <div class="burger_content_wrapper">
               <div class="burger_info">
                 <div class="container">
@@ -697,10 +645,9 @@ get_header();
                   </div>
                   <div class="burger_text_wrapper">
                     <div class="burger_info_text">
-
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(22); ?>">
                             <li>Graphic design</li>
                           </a>
                         </ul>
@@ -713,7 +660,7 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(24); ?>">
                             <li>Web-design</li>
                           </a>
                         </ul>
@@ -726,8 +673,8 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
-                            <li>Branding</li>
+                          <a href="<?php the_permalink(17); ?>">
+                            <li>Illustration</li>
                           </a>
                         </ul>
                         <p>brandbook</p>
@@ -754,7 +701,7 @@ get_header();
                           fill="black" />
                       </svg>
                     </a>
-                    <a href="tel:+380997101033">
+                    <a href="https://api.whatsapp.com/send?phone=380997101033" target="_blank">
                       <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M38 9.25C32 -5.96046e-07 19.75 -2.75 10.25 3C0.999998 8.75 -2 21.25 4 30.5L4.5 31.25L2.5 38.75L10 36.75L10.75 37.25C14 39 17.5 40 21 40C24.75 40 28.5 39 31.75 37C41 31 43.75 18.75 38 9.25ZM32.75 28.5C31.75 30 30.5 31 28.75 31.25C27.75 31.25 26.5 31.75 21.5 29.75C17.25 27.75 13.75 24.5 11.25 20.75C9.75 19 9 16.75 8.75 14.5C8.75 12.5 9.5 10.75 10.75 9.5C11.25 9 11.75 8.75 12.25 8.75H13.5C14 8.75 14.5 8.75 14.75 9.75C15.25 11 16.5 14 16.5 14.25C16.75 14.5 16.75 15 16.5 15.25C16.75 15.75 16.5 16.25 16.25 16.5C16 16.75 15.75 17.25 15.5 17.5C15 17.75 14.75 18.25 15 18.75C16 20.25 17.25 21.75 18.5 23C20 24.25 21.5 25.25 23.25 26C23.75 26.25 24.25 26.25 24.5 25.75C24.75 25.25 26 24 26.5 23.5C27 23 27.25 23 27.75 23.25L31.75 25.25C32.25 25.5 32.75 25.75 33 26C33.25 26.75 33.25 27.75 32.75 28.5Z"
@@ -773,22 +720,10 @@ get_header();
                   </div>
                 </div>
               </div>
-              <div class="mobile_burger_logo">
-                <svg viewBox="0 0 375 123" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M-8 2.99453H56.0252C70.5004 2.99453 83.2436 5.67714 94.2547 11.0424C105.389 16.2828 113.988 23.8315 120.05 33.6885C126.236 43.5455 129.329 55.1494 129.329 68.5C129.329 81.8506 126.236 93.4545 120.05 103.311C113.988 113.168 105.389 120.78 94.2547 126.145C83.2436 131.385 70.5004 134.005 56.0252 134.005H-8V2.99453ZM54.1694 99.5683C63.5721 99.5683 71.0572 96.8857 76.6246 91.5205C82.3157 86.0305 85.1613 78.357 85.1613 68.5C85.1613 58.643 82.3157 51.0319 76.6246 45.6667C71.0572 40.1767 63.5721 37.4317 54.1694 37.4317H35.7969V99.5683H54.1694Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M231.245 64.944H269.289V120.343C261.618 125.708 252.71 129.826 242.565 132.695C232.42 135.565 222.461 137 212.687 137C198.83 137 186.396 134.13 175.385 128.391C164.374 122.526 155.714 114.416 149.404 104.06C143.218 93.5792 140.125 81.7259 140.125 68.5C140.125 55.2741 143.218 43.4831 149.404 33.127C155.714 22.6462 164.436 14.536 175.571 8.79645C186.829 2.93215 199.511 0 213.615 0C226.358 0 237.74 2.18351 247.761 6.55054C257.906 10.7928 266.319 17.0314 273 25.2664L244.978 50.1585C236.812 40.551 227.1 35.7473 215.842 35.7473C206.191 35.7473 198.521 38.6794 192.83 44.5437C187.139 50.408 184.293 58.3934 184.293 68.5C184.293 78.357 187.077 86.2801 192.644 92.2691C198.335 98.2582 205.882 101.253 215.285 101.253C220.852 101.253 226.172 100.192 231.245 98.071V64.944Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M416 2.99453V134.005H379.997L330.633 74.4891V134.005H287.95V2.99453H323.952L373.317 62.5109V2.99453H416Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                </svg>
-              </div>
+
             </div>
           </div>
-          <a href="#form">get consultation</a>
+          <a href="#page8">get consultation</a>
         </nav>
       </div>
       <div class="main_info_section_wrapper">
@@ -799,12 +734,12 @@ get_header();
             employees and customers.</p>
           <div class="mobile_info_image">
             <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_g2vkael0.json" background="transparent"
-              speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+              speed="1" style="width: 90%; height: 90%;" loop autoplay></lottie-player>
           </div>
         </div>
         <div class="main_info_image">
           <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_g2vkael0.json" background="transparent"
-            speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+            speed="1" style="width: 90%; height: 90%;" loop autoplay></lottie-player>
         </div>
       </div>
     </div>
@@ -825,11 +760,11 @@ get_header();
         </div>
         <nav>
 
-          <div class="burger">
+          <div class="burger" data-id="menu_6">
             <p>menu</p>
-            <span></span>
+            <img data-src="/wp-content/uploads/2022/07/burger_lines.png" alt="burger">
           </div>
-          <div class="burger_content">
+          <div class="burger_content" data-id="menu_6">
             <div class="burger_content_wrapper">
               <div class="burger_info">
                 <div class="container">
@@ -854,7 +789,7 @@ get_header();
                     <div class="burger_info_text">
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(22); ?>">
                             <li>Graphic design</li>
                           </a>
                         </ul>
@@ -867,7 +802,7 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(24); ?>">
                             <li>Web-design</li>
                           </a>
                         </ul>
@@ -880,8 +815,8 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
-                            <li>Branding</li>
+                          <a href="<?php the_permalink(17); ?>">
+                            <li>Illustration</li>
                           </a>
                         </ul>
                         <p>brandbook</p>
@@ -908,7 +843,7 @@ get_header();
                           fill="black" />
                       </svg>
                     </a>
-                    <a href="tel:+380997101033">
+                    <a href="https://api.whatsapp.com/send?phone=380997101033" target="_blank">
                       <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M38 9.25C32 -5.96046e-07 19.75 -2.75 10.25 3C0.999998 8.75 -2 21.25 4 30.5L4.5 31.25L2.5 38.75L10 36.75L10.75 37.25C14 39 17.5 40 21 40C24.75 40 28.5 39 31.75 37C41 31 43.75 18.75 38 9.25ZM32.75 28.5C31.75 30 30.5 31 28.75 31.25C27.75 31.25 26.5 31.75 21.5 29.75C17.25 27.75 13.75 24.5 11.25 20.75C9.75 19 9 16.75 8.75 14.5C8.75 12.5 9.5 10.75 10.75 9.5C11.25 9 11.75 8.75 12.25 8.75H13.5C14 8.75 14.5 8.75 14.75 9.75C15.25 11 16.5 14 16.5 14.25C16.75 14.5 16.75 15 16.5 15.25C16.75 15.75 16.5 16.25 16.25 16.5C16 16.75 15.75 17.25 15.5 17.5C15 17.75 14.75 18.25 15 18.75C16 20.25 17.25 21.75 18.5 23C20 24.25 21.5 25.25 23.25 26C23.75 26.25 24.25 26.25 24.5 25.75C24.75 25.25 26 24 26.5 23.5C27 23 27.25 23 27.75 23.25L31.75 25.25C32.25 25.5 32.75 25.75 33 26C33.25 26.75 33.25 27.75 32.75 28.5Z"
@@ -927,23 +862,11 @@ get_header();
                   </div>
                 </div>
               </div>
-              <div class="mobile_burger_logo">
-                <svg viewBox="0 0 375 123" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M-8 2.99453H56.0252C70.5004 2.99453 83.2436 5.67714 94.2547 11.0424C105.389 16.2828 113.988 23.8315 120.05 33.6885C126.236 43.5455 129.329 55.1494 129.329 68.5C129.329 81.8506 126.236 93.4545 120.05 103.311C113.988 113.168 105.389 120.78 94.2547 126.145C83.2436 131.385 70.5004 134.005 56.0252 134.005H-8V2.99453ZM54.1694 99.5683C63.5721 99.5683 71.0572 96.8857 76.6246 91.5205C82.3157 86.0305 85.1613 78.357 85.1613 68.5C85.1613 58.643 82.3157 51.0319 76.6246 45.6667C71.0572 40.1767 63.5721 37.4317 54.1694 37.4317H35.7969V99.5683H54.1694Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M231.245 64.944H269.289V120.343C261.618 125.708 252.71 129.826 242.565 132.695C232.42 135.565 222.461 137 212.687 137C198.83 137 186.396 134.13 175.385 128.391C164.374 122.526 155.714 114.416 149.404 104.06C143.218 93.5792 140.125 81.7259 140.125 68.5C140.125 55.2741 143.218 43.4831 149.404 33.127C155.714 22.6462 164.436 14.536 175.571 8.79645C186.829 2.93215 199.511 0 213.615 0C226.358 0 237.74 2.18351 247.761 6.55054C257.906 10.7928 266.319 17.0314 273 25.2664L244.978 50.1585C236.812 40.551 227.1 35.7473 215.842 35.7473C206.191 35.7473 198.521 38.6794 192.83 44.5437C187.139 50.408 184.293 58.3934 184.293 68.5C184.293 78.357 187.077 86.2801 192.644 92.2691C198.335 98.2582 205.882 101.253 215.285 101.253C220.852 101.253 226.172 100.192 231.245 98.071V64.944Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M416 2.99453V134.005H379.997L330.633 74.4891V134.005H287.95V2.99453H323.952L373.317 62.5109V2.99453H416Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                </svg>
-              </div>
+
             </div>
 
           </div>
-          <a href="#form">get consultation</a>
+          <a href="#page8">get consultation</a>
         </nav>
       </div>
       <div class="price_screen">
@@ -957,7 +880,7 @@ get_header();
                 <li>Visual Audit</li>
                 <li>Logo & Corporate Identity</li>
                 <li>Brand Naming & Renaming</li>
-                <li>Warlrames</li>
+                <li>Wareframes</li>
                 <li>StyleGuide</li>
                 <li>Infographics</li>
                 <li>Email Campaign Concept</li>
@@ -967,7 +890,7 @@ get_header();
             </div>
             <div class="price_link">
               <div class="price_link_image">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/card_arrow.png" alt="">
+                <img data-src="<?php echo get_template_directory_uri(); ?>/img/card_arrow.png" alt="">
               </div>
               <a data-modal="cal_modal_1" class="price_btn" href="##">Set a call</a>
             </div>
@@ -977,7 +900,7 @@ get_header();
               <div class="calendly-inline-widget" data-url="https://calendly.com/sales-rhs/set-appointment">
               </div>
               <div class="calendly_close">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                <span></span>
               </div>
             </div>
           </div>
@@ -999,7 +922,7 @@ get_header();
             </div>
             <div class="price_link">
               <div class="price_link_image">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/card_arrow.png" alt="">
+                <img data-src="<?php echo get_template_directory_uri(); ?>/img/card_arrow.png" alt="">
               </div>
               <a data-modal="cal_modal_2" class="price_btn" href="##">Set a call</a>
             </div>
@@ -1009,7 +932,7 @@ get_header();
               <div class="calendly-inline-widget" data-url="https://calendly.com/sales-rhs/set-appointment">
               </div>
               <div class="calendly_close">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                <span></span>
               </div>
             </div>
           </div>
@@ -1029,7 +952,7 @@ get_header();
             </div>
             <div class="price_link">
               <div class="price_link_image">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/card_arrow.png" alt="">
+                <img data-src="<?php echo get_template_directory_uri(); ?>/img/card_arrow.png" alt="">
               </div>
               <a data-modal="cal_modal_3" class="price_btn" href="##">Set a call</a>
             </div>
@@ -1039,85 +962,125 @@ get_header();
               <div class="calendly-inline-widget" data-url="https://calendly.com/sales-rhs/set-appointment">
               </div>
               <div class="calendly_close">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                <span></span>
               </div>
             </div>
           </div>
 
         </div>
-        <div class="mobile_cards_price_wrapper">
-          <div class="slide">
-            <div class="card_price">
-              <div class="card_price_content">
-                <h2>.Starter.</h2>
-                <p>40 hours valid 30 days</p>
-                <ul>
-                  <li>Visual Audit</li>
-                  <li>Logo & Corporate Identity</li>
-                  <li>Brand Naming & Renaming</li>
-                  <li>Warlrames</li>
-                  <li>StyleGuide</li>
-                  <li>Infographics</li>
-                  <li>Email Campaign Concept</li>
-                  <li>Social Media Design</li>
-                </ul>
-                <h1>€800/$840</h1>
-              </div>
-              <div class="price_link">
-                <div class="price_link_image">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/card_arrow.png" alt="">
+        
+
+        
+        <div class="mobile_slider">
+          <div class="design_swiper swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="card_price">
+                  <div class="card_price_content">
+                    <h2>.Starter.</h2>
+                    <p>40 hours valid 30 days</p>
+                    <ul>
+                      <li>Visual Audit</li>
+                      <li>Logo & Corporate Identity</li>
+                      <li>Brand Naming & Renaming</li>
+                      <li>Wareframes</li>
+                      <li>StyleGuide</li>
+                      <li>Infographics</li>
+                      <li>Email Campaign Concept</li>
+                      <li>Social Media Design</li>
+                    </ul>
+                    <h1>€800/$840</h1>
+                  </div>
+                  <div class="price_link">
+                    <div class="price_link_image">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/card_arrow.png" alt="">
+                    </div>
+                    <a data-modal="mobile_modal_1" class="price_btn" href="">Set a call</a>
+                  </div>
                 </div>
-                <a href="##">Set a call</a>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="card_price">
+                  <div class="card_price_content">
+                    <h2>.Optimal.</h2>
+                    <p>80 hours valid 30 days</p>
+                    <ul>
+                      <li><span>Starter</span> + Warframe</li>
+                      <li>Landing Page</li>
+                      <li>Userflow</li>
+                      <li>Animated Prototypes</li>
+                      <li>Package design</li>
+                      <li>Printed products</li>
+                      <li>Clothing design</li>
+                    </ul>
+                    <h1>€1100/$1200</h1>
+                  </div>
+                  <div class="price_link">
+                    <div class="price_link_image">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/card_arrow.png" alt="">
+                    </div>
+                    <a data-modal="mobile_modal_2" class="price_btn" href="">Set a call</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="card_price">
+                  <div class="card_price_content">
+                    <h2>.Advanced.</h2>
+                    <p>160 hours valid 30 days</p>
+                    <ul>
+                      <li><span>Optimal</span> + Corporate website</li>
+                      <li>Online store</li>
+                      <li>CRMsystem</li>
+                      <li>Websitedesign</li>
+                      <li>Interior design</li>
+                    </ul>
+                    <h1>€1400/$1500</h1>
+                  </div>
+                  <div class="price_link">
+                    <div class="price_link_image">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/card_arrow.png" alt="">
+                    </div>
+                    <a data-modal="mobile_modal_3" class="price_btn" href="">Set a call</a>
+                  </div>
+                </div>
               </div>
             </div>
+            <div class="swiper-pagination"></div>
           </div>
-          <div class="slide">
-            <div class="card_price">
-              <div class="card_price_content">
-                <h2>.Optimal.</h2>
-                <p>80 hours valid 30 days</p>
-                <ul>
-                  <li><span>Starter</span> + Warframe</li>
-                  <li>Landing Page</li>
-                  <li>Userflow</li>
-                  <li>Animated Prototypes</li>
-                  <li>Package design</li>
-                  <li>Printed products</li>
-                  <li>Clothing design</li>
-                </ul>
-                <h1>€1100/$1200</h1>
-              </div>
-              <div class="price_link">
-                <div class="price_link_image">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/card_arrow.png" alt="">
-                </div>
-                <a href="##">Set a call</a>
-              </div>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="card_price">
-              <div class="card_price_content">
-                <h2>.Advanced.</h2>
-                <p>160 hours valid 30 days</p>
-                <ul>
-                  <li><span>Optimal</span> + Corporate website</li>
-                  <li>Online store</li>
-                  <li>CRMsystem</li>
-                  <li>Websitedesign</li>
-                  <li>Interior design</li>
-                </ul>
-                <h1>€1400/$1500</h1>
-              </div>
-              <div class="price_link">
-                <div class="price_link_image">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/card_arrow.png" alt="">
-                </div>
-                <a href="##">Set a call</a>
-              </div>
+        </div>
+
+
+        <div data-modal="mobile_modal_1" class="card_price_modal_calendly">
+          <div class="card_price_modal_calendly_content">
+            <div class="calendly-inline-widget" data-url="https://calendly.com/sales-rhs/set-appointment"></div>
+            <div class="calendly_close">
+              <span></span>
             </div>
           </div>
         </div>
+
+        <div data-modal="mobile_modal_2" class="card_price_modal_calendly">
+          <div class="card_price_modal_calendly_content">
+            <div class="calendly-inline-widget" data-url="https://calendly.com/sales-rhs/set-appointment"></div>
+            <div class="calendly_close">
+              <span></span>
+            </div>
+          </div>
+        </div>
+        
+        <div data-modal="mobile_modal_3" class="card_price_modal_calendly">
+          <div class="card_price_modal_calendly_content">
+            <div class="calendly-inline-widget" data-url="https://calendly.com/sales-rhs/set-appointment"></div>
+            <div class="calendly_close">
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+
         <p class="price_text">*services may vary depending on your needs and may be
           discussed with sales manager
         </p>
@@ -1140,11 +1103,11 @@ get_header();
         </div>
         <nav>
 
-          <div class="burger">
+          <div class="burger" data-id="menu_7">
             <p>menu</p>
-            <span></span>
+            <img data-src="/wp-content/uploads/2022/07/burger_lines.png" alt="burger">
           </div>
-          <div class="burger_content">
+          <div class="burger_content" data-id="menu_7">
             <div class="burger_content_wrapper">
               <div class="burger_info">
                 <div class="container">
@@ -1169,7 +1132,7 @@ get_header();
                     <div class="burger_info_text">
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(22); ?>">
                             <li>Graphic design</li>
                           </a>
                         </ul>
@@ -1182,7 +1145,7 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(24); ?>">
                             <li>Web-design</li>
                           </a>
                         </ul>
@@ -1195,8 +1158,8 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
-                            <li>Branding</li>
+                          <a href="<?php the_permalink(17); ?>">
+                            <li>Illustration</li>
                           </a>
                         </ul>
                         <p>brandbook</p>
@@ -1223,7 +1186,7 @@ get_header();
                           fill="black" />
                       </svg>
                     </a>
-                    <a href="tel:+380997101033">
+                    <a href="https://api.whatsapp.com/send?phone=380997101033" target="_blank">
                       <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M38 9.25C32 -5.96046e-07 19.75 -2.75 10.25 3C0.999998 8.75 -2 21.25 4 30.5L4.5 31.25L2.5 38.75L10 36.75L10.75 37.25C14 39 17.5 40 21 40C24.75 40 28.5 39 31.75 37C41 31 43.75 18.75 38 9.25ZM32.75 28.5C31.75 30 30.5 31 28.75 31.25C27.75 31.25 26.5 31.75 21.5 29.75C17.25 27.75 13.75 24.5 11.25 20.75C9.75 19 9 16.75 8.75 14.5C8.75 12.5 9.5 10.75 10.75 9.5C11.25 9 11.75 8.75 12.25 8.75H13.5C14 8.75 14.5 8.75 14.75 9.75C15.25 11 16.5 14 16.5 14.25C16.75 14.5 16.75 15 16.5 15.25C16.75 15.75 16.5 16.25 16.25 16.5C16 16.75 15.75 17.25 15.5 17.5C15 17.75 14.75 18.25 15 18.75C16 20.25 17.25 21.75 18.5 23C20 24.25 21.5 25.25 23.25 26C23.75 26.25 24.25 26.25 24.5 25.75C24.75 25.25 26 24 26.5 23.5C27 23 27.25 23 27.75 23.25L31.75 25.25C32.25 25.5 32.75 25.75 33 26C33.25 26.75 33.25 27.75 32.75 28.5Z"
@@ -1242,23 +1205,11 @@ get_header();
                   </div>
                 </div>
               </div>
-              <div class="mobile_burger_logo">
-                <svg viewBox="0 0 375 123" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M-8 2.99453H56.0252C70.5004 2.99453 83.2436 5.67714 94.2547 11.0424C105.389 16.2828 113.988 23.8315 120.05 33.6885C126.236 43.5455 129.329 55.1494 129.329 68.5C129.329 81.8506 126.236 93.4545 120.05 103.311C113.988 113.168 105.389 120.78 94.2547 126.145C83.2436 131.385 70.5004 134.005 56.0252 134.005H-8V2.99453ZM54.1694 99.5683C63.5721 99.5683 71.0572 96.8857 76.6246 91.5205C82.3157 86.0305 85.1613 78.357 85.1613 68.5C85.1613 58.643 82.3157 51.0319 76.6246 45.6667C71.0572 40.1767 63.5721 37.4317 54.1694 37.4317H35.7969V99.5683H54.1694Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M231.245 64.944H269.289V120.343C261.618 125.708 252.71 129.826 242.565 132.695C232.42 135.565 222.461 137 212.687 137C198.83 137 186.396 134.13 175.385 128.391C164.374 122.526 155.714 114.416 149.404 104.06C143.218 93.5792 140.125 81.7259 140.125 68.5C140.125 55.2741 143.218 43.4831 149.404 33.127C155.714 22.6462 164.436 14.536 175.571 8.79645C186.829 2.93215 199.511 0 213.615 0C226.358 0 237.74 2.18351 247.761 6.55054C257.906 10.7928 266.319 17.0314 273 25.2664L244.978 50.1585C236.812 40.551 227.1 35.7473 215.842 35.7473C206.191 35.7473 198.521 38.6794 192.83 44.5437C187.139 50.408 184.293 58.3934 184.293 68.5C184.293 78.357 187.077 86.2801 192.644 92.2691C198.335 98.2582 205.882 101.253 215.285 101.253C220.852 101.253 226.172 100.192 231.245 98.071V64.944Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M416 2.99453V134.005H379.997L330.633 74.4891V134.005H287.95V2.99453H323.952L373.317 62.5109V2.99453H416Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                </svg>
-              </div>
+
             </div>
 
           </div>
-          <a href="#">get consultation</a>
+          <a href="#page8">get consultation</a>
         </nav>
       </div>
       <div class="portfolio_wrapper">
@@ -1272,7 +1223,7 @@ get_header();
           </div>
         </div>
         <div class="portfolio_btns">
-          <button class="filter_btn" data-tab="#tab_1">Branding</button>
+          <button class="filter_btn" data-tab="#tab_1">Illustration</button>
           <button class="filter_btn active" data-tab="#tab_2">GRAPHIC DESIGN</button>
           <button class="filter_btn" data-tab="#tab_3">web design</button>
         </div>
@@ -1282,15 +1233,16 @@ get_header();
         <!-- branding -->
         <div class="branding_wrapper tab_item" id="tab_1">
           <div class="vertical_wrapper_portfolio">
+
             <div class="portfolio_cards-branding">
               <div class="left_column_wrapper">
                 <div class="top_wrapper">
                   <a data-fslightbox="brand" href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_1.png"
                     data-modal="brand_popup_1" class="card branding">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_1.png" alt="">
+                    <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_1.png" alt="">
                     <div class="card_hover">
                       <ul>
-                        <li>Branding</li>
+                        <li>Illustration</li>
                       </ul>
                       <p>We will make your brand bright and recognizable all over the world, just trust us.
                       </p>
@@ -1299,10 +1251,10 @@ get_header();
 
                   <a data-fslightbox="brand" href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_2.png"
                     data-modal="brand_popup_2" class="card branding">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_2.png" alt="">
+                    <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_2.png" alt="">
                     <div class="card_hover">
                       <ul>
-                        <li>Branding</li>
+                        <li>Illustration</li>
                       </ul>
                       <p>We will make your brand bright and recognizable all over the world, just trust us.
                       </p>
@@ -1313,10 +1265,10 @@ get_header();
                 <div class="bottom_wrapper">
                   <a data-fslightbox="brand" href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_4.png"
                     data-modal="brand_popup_4" class="card graphic">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_4.png" alt="">
+                    <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_4.png" alt="">
                     <div class="card_hover">
                       <ul>
-                        <li>Branding</li>
+                        <li>Illustration</li>
                       </ul>
                       <p>We will make your brand bright and recognizable all over the world, just trust us.
                       </p>
@@ -1325,10 +1277,10 @@ get_header();
 
                   <a data-fslightbox="brand" href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_5.png"
                     data-modal="brand_popup_5" class="card web">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_5.png" alt="">
+                    <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_5.png" alt="">
                     <div class="card_hover">
                       <ul>
-                        <li>Branding</li>
+                        <li>Illustration</li>
                       </ul>
                       <p>We will make your brand bright and recognizable all over the world, just trust us.
                       </p>
@@ -1339,10 +1291,10 @@ get_header();
               <div class="aside_wrapper">
                 <a data-fslightbox="brand" href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_3.jpg"
                   data-modal="brand_popup_3" class="card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_3.png" alt="">
+                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_3.png" alt="">
                   <div class="card_hover">
                     <ul>
-                      <li>Branding</li>
+                      <li>Illustration</li>
                     </ul>
                     <p>We will make your brand bright and recognizable all over the world, just trust us.
                     </p>
@@ -1351,10 +1303,10 @@ get_header();
 
                 <a data-fslightbox="brand" href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_6.png"
                   data-modal="brand_popup_6" class="card web">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_6.png" alt="">
+                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_6.png" alt="">
                   <div class="card_hover">
                     <ul>
-                      <li>Branding</li>
+                      <li>Illustration</li>
                     </ul>
                     <p>We will make your brand bright and recognizable all over the world, just trust us.
                     </p>
@@ -1365,16 +1317,103 @@ get_header();
 
 
             <div class="more">
+              <!-- more block -->
+
+
+
+              <!-- new cards in block "more" -->
+              <div class="portfolio_cards-branding new_cards">
+                <div class="left_column_wrapper">
+                  <div class="top_wrapper">
+                    <a data-fslightbox="brand" href="/wp-content/uploads/2022/07/art_notebook.jpg"
+                      data-modal="brand_popup_1" class="card branding">
+                      <img data-src="/wp-content/uploads/2022/07/art_notebook.jpg">
+                      <div class="card_hover">
+                        <ul>
+                          <li>Illustration</li>
+                        </ul>
+                        <p>We will make your brand bright and recognizable all over the world, just trust us.
+                        </p>
+                      </div>
+                    </a>
+
+                    <a data-fslightbox="brand" href="/wp-content/uploads/2022/07/dog.png" data-modal="brand_popup_2"
+                      class="card branding">
+                      <img data-src="/wp-content/uploads/2022/07/dog.png" alt="">
+                      <div class="card_hover">
+                        <ul>
+                          <li>Illustration</li>
+                        </ul>
+                        <p>We will make your brand bright and recognizable all over the world, just trust us.
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="bottom_wrapper">
+                    <a data-fslightbox="brand" href="/wp-content/uploads/2022/07/jumppark-scaled.jpg"
+                      data-modal="brand_popup_4" class="card graphic">
+                      <img data-src="/wp-content/uploads/2022/07/jumppark-scaled.jpg" alt="">
+                      <div class="card_hover">
+                        <ul>
+                          <li>Illustration</li>
+                        </ul>
+                        <p>We will make your brand bright and recognizable all over the world, just trust us.
+                        </p>
+                      </div>
+                    </a>
+
+                    <a data-fslightbox="brand" href="/wp-content/uploads/2022/07/mental.jpg" data-modal="brand_popup_5"
+                      class="card web">
+                      <img data-src="/wp-content/uploads/2022/07/mental.jpg" alt="">
+                      <div class="card_hover">
+                        <ul>
+                          <li>Illustration</li>
+                        </ul>
+                        <p>We will make your brand bright and recognizable all over the world, just trust us.
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="aside_wrapper">
+                  <a data-fslightbox="brand" href="/wp-content/uploads/2022/07/music.jpg" data-modal="brand_popup_3"
+                    class="card">
+                    <img data-src="/wp-content/uploads/2022/07/music.jpg" alt="">
+                    <div class="card_hover">
+                      <ul>
+                        <li>Illustration</li>
+                      </ul>
+                      <p>We will make your brand bright and recognizable all over the world, just trust us.
+                      </p>
+                    </div>
+                  </a>
+
+
+                  <a data-fslightbox="brand" href="/wp-content/uploads/2022/07/serpanok-scaled.jpg"
+                    data-modal="brand_popup_6" class="card web">
+                    <img data-src="/wp-content/uploads/2022/07/prev_serpanok.jpg" alt="">
+                    <div class="card_hover">
+                      <ul>
+                        <li>Illustration</li>
+                      </ul>
+                      <p>We will make your brand bright and recognizable all over the world, just trust us.
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
               <div class="portfolio_cards-branding">
                 <div class="left_column_wrapper">
                   <div class="top_wrapper">
                     <a data-fslightbox="brand"
                       href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_7.png"
                       data-modal="brand_popup_7" class="card branding">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_7.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_7.png" alt="">
                       <div class="card_hover">
                         <ul>
-                          <li>Branding</li>
+                          <li>Illustration</li>
                         </ul>
                         <p>We will make your brand bright and recognizable all over the world, just trust us.
                         </p>
@@ -1383,10 +1422,10 @@ get_header();
                     <a data-fslightbox="brand"
                       href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_8.png"
                       data-modal="brand_popup_8" class="card branding">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_8.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_8.png" alt="">
                       <div class="card_hover">
                         <ul>
-                          <li>Branding</li>
+                          <li>Illustration</li>
                         </ul>
                         <p>We will make your brand bright and recognizable all over the world, just trust us.
                         </p>
@@ -1399,10 +1438,10 @@ get_header();
                       <a data-fslightbox="brand"
                         href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_10.png"
                         data-modal="brand_popup_10" class="card brand_card_10">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_10.png" alt="">
+                        <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_10.png" alt="">
                         <div class="card_hover">
                           <ul>
-                            <li>Branding</li>
+                            <li>Illustration</li>
                           </ul>
                           <p>We will make your brand bright and recognizable all over the world, just trust us.
                           </p>
@@ -1411,10 +1450,10 @@ get_header();
                       <a data-fslightbox="brand"
                         href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_11.png"
                         data-modal="brand_popup_11" class="card">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_11.png" alt="">
+                        <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_11.png" alt="">
                         <div class="card_hover">
                           <ul>
-                            <li>Branding</li>
+                            <li>Illustration</li>
                           </ul>
                           <p>We will make your brand bright and recognizable all over the world, just trust us.
                           </p>
@@ -1426,10 +1465,10 @@ get_header();
                       <a data-fslightbox="brand"
                         href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_13.jpg"
                         data-modal="brand_popup_13" class="card">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_13.png" alt="">
+                        <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_13.png" alt="">
                         <div class="card_hover">
                           <ul>
-                            <li>Branding</li>
+                            <li>Illustration</li>
                           </ul>
                           <p>We will make your brand bright and recognizable all over the world, just trust us.
                           </p>
@@ -1438,10 +1477,10 @@ get_header();
                       <a data-fslightbox="brand"
                         href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_14.jpg"
                         data-modal="brand_popup_14" class="card">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_14.png" alt="">
+                        <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_14.png" alt="">
                         <div class="card_hover">
                           <ul>
-                            <li>Branding</li>
+                            <li>Illustration</li>
                           </ul>
                           <p>We will make your brand bright and recognizable all over the world, just trust us.
                           </p>
@@ -1452,10 +1491,10 @@ get_header();
                       <a data-fslightbox="brand"
                         href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_16.jpg"
                         data-modal="brand_popup_16" class="card">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_16.png" alt="">
+                        <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_16.png" alt="">
                         <div class="card_hover">
                           <ul>
-                            <li>Branding</li>
+                            <li>Illustration</li>
                           </ul>
                           <p>We will make your brand bright and recognizable all over the world, just trust us.
                           </p>
@@ -1464,10 +1503,10 @@ get_header();
                       <a data-fslightbox="brand"
                         href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_17.png"
                         data-modal="brand_popup_17" class="card">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_17.png" alt="">
+                        <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_17.png" alt="">
                         <div class="card_hover">
                           <ul>
-                            <li>Branding</li>
+                            <li>Illustration</li>
                           </ul>
                           <p>We will make your brand bright and recognizable all over the world, just trust us.
                           </p>
@@ -1478,10 +1517,22 @@ get_header();
                       <a data-fslightbox="brand"
                         href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_19.jpg"
                         data-modal="brand_popup_19" class="card brand_popup_19">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_19.png" alt="">
+                        <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_19.png" alt="">
                         <div class="card_hover">
                           <ul>
-                            <li>Branding</li>
+                            <li>Illustration</li>
+                          </ul>
+                          <p>We will make your brand bright and recognizable all over the world, just trust us.
+                          </p>
+                        </div>
+                      </a>
+                      <a data-fslightbox="brand"
+                        href="/wp-content/uploads/2022/07/сlothes_store.png "
+                        data-modal="brand_popup_19" class="card brand_popup_20">
+                        <img data-src="/wp-content/uploads/2022/07/сlothes_store.png " alt="">
+                        <div class="card_hover">
+                          <ul>
+                            <li>Illustration</li>
                           </ul>
                           <p>We will make your brand bright and recognizable all over the world, just trust us.
                           </p>
@@ -1506,12 +1557,12 @@ get_header();
                               </svg>
                             </div>
                             <a class="popup_close" href="##">
-                              <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                              <img data-src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
                             </a>
                           </div>
                           <div class="popup_content">
                             <div class="popup_img">
-                              <img src="<?php echo get_template_directory_uri(); ?>/img/branding/brand_19.jpg"
+                              <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/brand_19.jpg"
                                 alt="sort1">
                             </div>
                           </div>
@@ -1525,10 +1576,10 @@ get_header();
                     <a data-fslightbox="brand"
                       href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_9.jpg"
                       data-modal="brand_popup_9" class="card graphic">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_9.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_9.png" alt="">
                       <div class="card_hover">
                         <ul>
-                          <li>Branding</li>
+                          <li>Illustration</li>
                         </ul>
                         <p>We will make your brand bright and recognizable all over the world, just trust us.
                         </p>
@@ -1553,12 +1604,12 @@ get_header();
                             </svg>
                           </div>
                           <a class="popup_close" href="##">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                            <img data-src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
                           </a>
                         </div>
                         <div class="popup_content">
                           <div class="popup_img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/branding/brand_9.jpg" alt="sort1">
+                            <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/brand_9.jpg" alt="sort1">
                           </div>
                         </div>
                       </div>
@@ -1567,10 +1618,10 @@ get_header();
                     <a data-fslightbox="brand"
                       href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_12.jpg"
                       data-modal="brand_popup_12" class="card brand_card_12">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_12.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_12.png" alt="">
                       <div class="card_hover">
                         <ul>
-                          <li>Branding</li>
+                          <li>Illustration</li>
                         </ul>
                         <p>We will make your brand bright and recognizable all over the world, just trust us.
                         </p>
@@ -1595,12 +1646,12 @@ get_header();
                             </svg>
                           </div>
                           <a class="popup_close" href="##">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                            <img data-src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
                           </a>
                         </div>
                         <div class="popup_content">
                           <div class="popup_img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/branding/brand_12.jpg"
+                            <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/brand_12.jpg"
                               alt="sort1">
                           </div>
                         </div>
@@ -1611,10 +1662,10 @@ get_header();
                     <a data-fslightbox="brand"
                       href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_15.jpg"
                       data-modal="brand_popup_15" class="card brand_card_15">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_15.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_15.png" alt="">
                       <div class="card_hover">
                         <ul>
-                          <li>Branding</li>
+                          <li>Illustration</li>
                         </ul>
                         <p>We will make your brand bright and recognizable all over the world, just trust us.
                         </p>
@@ -1624,10 +1675,10 @@ get_header();
                     <a data-fslightbox="brand"
                       href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_18.png"
                       data-modal="brand_popup_18" class="card card_brand_18">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_18.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_18.png" alt="">
                       <div class="card_hover">
                         <ul>
-                          <li>Branding</li>
+                          <li>Illustration</li>
                         </ul>
                         <p>We will make your brand bright and recognizable all over the world, just trust us.
                         </p>
@@ -1652,12 +1703,12 @@ get_header();
                             </svg>
                           </div>
                           <a class="popup_close" href="##">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                            <img data-src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
                           </a>
                         </div>
                         <div class="popup_content">
                           <div class="popup_img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/branding/brand_18.png"
+                            <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/brand_18.png"
                               alt="sort1">
                           </div>
                         </div>
@@ -1668,10 +1719,10 @@ get_header();
                   <a data-fslightbox="brand"
                     href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_21.jpg"
                     data-modal="brand_popup_21" class="card card_brand_21">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_21.png" alt="">
+                    <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_21.png" alt="">
                     <div class="card_hover">
                       <ul>
-                        <li>Branding</li>
+                        <li>Illustration</li>
                       </ul>
                       <p>We will make your brand bright and recognizable all over the world, just trust us.
                       </p>
@@ -1696,12 +1747,12 @@ get_header();
                           </svg>
                         </div>
                         <a class="popup_close" href="##">
-                          <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                          <img data-src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
                         </a>
                       </div>
                       <div class="popup_content">
                         <div class="popup_img">
-                          <img src="<?php echo get_template_directory_uri(); ?>/img/branding/brand_21.jpg" alt="sort1">
+                          <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/brand_21.jpg" alt="sort1">
                         </div>
                       </div>
                     </div>
@@ -1710,10 +1761,10 @@ get_header();
                   <a data-fslightbox="brand"
                     href="<?php echo get_template_directory_uri(); ?>/img/branding/brand_20.jpg"
                     data-modal="brand_popup_20" class="card card_brand_20">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_20.png" alt="">
+                    <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/prev_brand_20.png" alt="">
                     <div class="card_hover">
                       <ul>
-                        <li>Branding</li>
+                        <li>Illustration</li>
                       </ul>
                       <p>We will make your brand bright and recognizable all over the world, just trust us.
                       </p>
@@ -1738,12 +1789,12 @@ get_header();
                           </svg>
                         </div>
                         <a class="popup_close" href="##">
-                          <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                          <img data-src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
                         </a>
                       </div>
                       <div class="popup_content">
                         <div class="popup_img">
-                          <img src="<?php echo get_template_directory_uri(); ?>/img/branding/brand_20.jpg" alt="sort1">
+                          <img data-src="<?php echo get_template_directory_uri(); ?>/img/branding/brand_20.jpg" alt="sort1">
                         </div>
                       </div>
                     </div>
@@ -1751,7 +1802,8 @@ get_header();
 
                 </div>
               </div>
-            </div>
+
+            </div> <!-- end more block -->
 
           </div>
 
@@ -1778,7 +1830,7 @@ get_header();
                 </a>
                 <a data-fslightbox="graph" href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_2.jpg"
                   data-modal="graphic_popup_2" class="card branding">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_2.png" alt="">
+                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_2.png" alt="">
                   <div class="card_hover">
                     <ul>
                       <li>Graphic design</li>
@@ -1792,7 +1844,7 @@ get_header();
               <div class="bottom_wrapper">
                 <a data-fslightbox="graph" href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_4.jpg"
                   data-modal="graphic_popup_4" class="card graphic">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_4.png" alt="">
+                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_4.png" alt="">
                   <div class="card_hover">
                     <ul>
                       <li>Graphic design</li>
@@ -1804,7 +1856,7 @@ get_header();
 
                 <a data-fslightbox="graph" href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_5.jpg"
                   data-modal="graphic_popup_5" class="card web">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_5.png" alt="">
+                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_5.png" alt="">
                   <div class="card_hover">
                     <ul>
                       <li>Graphic design</li>
@@ -1818,7 +1870,7 @@ get_header();
             <div class="aside_wrapper">
               <a data-fslightbox="graph" href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_3.jpg"
                 data-modal="graphic_popup_3" class="card graphic">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_3.png" alt="">
+                <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_3.png" alt="">
                 <div class="card_hover">
                   <ul>
                     <li>Graphic design</li>
@@ -1830,7 +1882,7 @@ get_header();
 
               <a data-fslightbox="graph" href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_6.png"
                 data-modal="graphic_popup_6" class="card web">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_6.png" alt="">
+                <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_6.png" alt="">
                 <div class="card_hover">
                   <ul>
                     <li>Graphic design</li>
@@ -1848,7 +1900,7 @@ get_header();
                 <div class="top_wrapper">
                   <a data-fslightbox="graph" href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_7.jpg"
                     data-modal="graph_popup_7" class="card branding">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_7.png" alt="">
+                    <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_7.png" alt="">
                     <div class="card_hover">
                       <ul>
                         <li>Graphic design</li>
@@ -1860,7 +1912,7 @@ get_header();
 
                   <a data-fslightbox="graph" href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_8.png"
                     data-modal="graph_popup_8" class="card branding">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_8.png" alt="">
+                    <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_8.png" alt="">
                     <div class="card_hover">
                       <ul>
                         <li>Graphic design</li>
@@ -1876,7 +1928,7 @@ get_header();
                     <a data-fslightbox="graph"
                       href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_10.jpg"
                       data-modal="graph_popup_10" class="card brand_card_10">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_10.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_10.png" alt="">
                       <div class="card_hover">
                         <ul>
                           <li>Graphic design</li>
@@ -1889,7 +1941,7 @@ get_header();
                     <a data-fslightbox="graph"
                       href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_11.png"
                       data-modal="graph_popup_11" class="card">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_11.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_11.png" alt="">
                       <div class="card_hover">
                         <ul>
                           <li>Graphic design</li>
@@ -1904,7 +1956,7 @@ get_header();
                     <a data-fslightbox="graph"
                       href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_13.jpg"
                       data-modal="graph_popup_13" class="card">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_13.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_13.png" alt="">
                       <div class="card_hover">
                         <ul>
                           <li>Graphic design</li>
@@ -1917,7 +1969,7 @@ get_header();
                     <a data-fslightbox="graph"
                       href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_14.jpg"
                       data-modal="graph_popup_14" class="card">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_14.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_14.png" alt="">
                       <div class="card_hover">
                         <ul>
                           <li>Graphic design</li>
@@ -1931,7 +1983,7 @@ get_header();
                     <a data-fslightbox="graph"
                       href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_16.png"
                       data-modal="graph_popup_16" class="card">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_16.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_16.png" alt="">
                       <div class="card_hover">
                         <ul>
                           <li>Graphic design</li>
@@ -1944,7 +1996,7 @@ get_header();
                     <a data-fslightbox="graph"
                       href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_17.png"
                       data-modal="graph_popup_17" class="card">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_17.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_17.png" alt="">
                       <div class="card_hover">
                         <ul>
                           <li>Graphic design</li>
@@ -1958,7 +2010,7 @@ get_header();
                     <a data-fslightbox="graph"
                       href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_19.jpg"
                       data-modal="graph_popup_19" class="card brand_popup_19">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_19.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_19.png" alt="">
                       <div class="card_hover">
                         <ul>
                           <li>Graphic design</li>
@@ -1986,12 +2038,12 @@ get_header();
                             </svg>
                           </div>
                           <a class="popup_close" href="##">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                            <img data-src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
                           </a>
                         </div>
                         <div class="popup_content">
                           <div class="popup_img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_19.jpg" alt="sort1">
+                            <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_19.jpg" alt="sort1">
                           </div>
                         </div>
                       </div>
@@ -2003,7 +2055,7 @@ get_header();
                 <div class="aside_wrapper_9_12">
                   <a data-fslightbox="graph" href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_9.jpg"
                     data-modal="brand_popup_9" class="card graphic">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_9.png" alt="">
+                    <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_9.png" alt="">
                     <div class="card_hover">
                       <ul>
                         <li>Graphic design</li>
@@ -2031,12 +2083,12 @@ get_header();
                           </svg>
                         </div>
                         <a class="popup_close" href="##">
-                          <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                          <img data-src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
                         </a>
                       </div>
                       <div class="popup_content">
                         <div class="popup_img">
-                          <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_9.jpg" alt="sort1">
+                          <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_9.jpg" alt="sort1">
                         </div>
                       </div>
                     </div>
@@ -2044,7 +2096,7 @@ get_header();
 
                   <a data-fslightbox="graph" href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_12.jpg"
                     data-modal="brand_popup_12" class="card brand_card_12">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_12.png" alt="">
+                    <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_12.png" alt="">
                     <div class="card_hover">
                       <ul>
                         <li>Graphic design</li>
@@ -2072,12 +2124,12 @@ get_header();
                           </svg>
                         </div>
                         <a class="popup_close" href="##">
-                          <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                          <img data-src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
                         </a>
                       </div>
                       <div class="popup_content">
                         <div class="popup_img">
-                          <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_12.jpg" alt="sort1">
+                          <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_12.jpg" alt="sort1">
                         </div>
                       </div>
                     </div>
@@ -2085,7 +2137,7 @@ get_header();
                 </div>
                 <a data-fslightbox="graph" href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_15.jpg"
                   data-modal="graph_popup_15" class="card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_15.png" alt="">
+                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_15.png" alt="">
                   <div class="card_hover">
                     <ul>
                       <li>Graphic design</li>
@@ -2113,12 +2165,12 @@ get_header();
                         </svg>
                       </div>
                       <a class="popup_close" href="##">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                        <img data-src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
                       </a>
                     </div>
                     <div class="popup_content">
                       <div class="popup_img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_15.jpg" alt="sort1">
+                        <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_15.jpg" alt="sort1">
                       </div>
                     </div>
                   </div>
@@ -2126,7 +2178,7 @@ get_header();
 
                 <a data-fslightbox="graph" href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_18.jpg"
                   data-modal="graph_popup_18" class="card card_brand_18">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_18.png" alt="">
+                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_18.png" alt="">
                   <div class="card_hover">
                     <ul>
                       <li>Graphic design</li>
@@ -2154,12 +2206,12 @@ get_header();
                         </svg>
                       </div>
                       <a class="popup_close" href="##">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                        <img data-src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
                       </a>
                     </div>
                     <div class="popup_content">
                       <div class="popup_img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_18.jpg" alt="sort1">
+                        <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_18.jpg" alt="sort1">
                       </div>
                     </div>
                   </div>
@@ -2167,10 +2219,10 @@ get_header();
 
                 <a data-fslightbox="graph" href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_21.png"
                   data-modal="graph_popup_21" class="card card_brand_21 card_graph_21">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_21.png" alt="">
+                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_21.png" alt="">
                   <div class="card_hover">
                     <ul>
-                      <li>Branding</li>
+                      <li>Illustration</li>
                     </ul>
                     <p>We will make your brand bright and recognizable all over the world, just trust us.
                     </p>
@@ -2195,12 +2247,12 @@ get_header();
                         </svg>
                       </div>
                       <a class="popup_close" href="##">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                        <img data-src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
                       </a>
                     </div>
                     <div class="popup_content">
                       <div class="popup_img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_21.png" alt="sort1">
+                        <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_21.png" alt="sort1">
                       </div>
                     </div>
                   </div>
@@ -2208,10 +2260,10 @@ get_header();
 
                 <a data-fslightbox="graph" href="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_20.png"
                   data-modal="graph_popup_20" class="card card_brand_20 card_graph_20">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_20.png" alt="">
+                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/prev_graph_20.png" alt="">
                   <div class="card_hover">
                     <ul>
-                      <li>Branding</li>
+                      <li>Illustration</li>
                     </ul>
                     <p>We will make your brand bright and recognizable all over the world, just trust us.
                     </p>
@@ -2236,12 +2288,12 @@ get_header();
                         </svg>
                       </div>
                       <a class="popup_close" href="##">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                        <img data-src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
                       </a>
                     </div>
                     <div class="popup_content">
                       <div class="popup_img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_20.png" alt="sort1">
+                        <img data-src="<?php echo get_template_directory_uri(); ?>/img/graphic/graph_20.png" alt="sort1">
                       </div>
                     </div>
                   </div>
@@ -2262,7 +2314,7 @@ get_header();
               <div class="top_wrapper">
                 <a href="<?php echo get_template_directory_uri(); ?>/img/web/web_1.jpg" data-fslightbox="web"
                   data-modal="web_popup_1" class="card branding">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_1.png" alt="">
+                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_1.png" alt="">
                   <div class="card_hover">
                     <ul>
                       <li>web design</li>
@@ -2274,7 +2326,7 @@ get_header();
 
                 <a href="<?php echo get_template_directory_uri(); ?>/img/web/web_2.jpg" data-fslightbox="web"
                   data-modal="web_popup_2" class="card branding">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_2.png" alt="">
+                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_2.png" alt="">
                   <div class="card_hover">
                     <ul>
                       <li>web design</li>
@@ -2288,7 +2340,7 @@ get_header();
               <div class="bottom_wrapper">
                 <a href="<?php echo get_template_directory_uri(); ?>/img/web/web_4.png" data-fslightbox="web"
                   data-modal="web_popup_4" class="card graphic">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_4.png" alt="">
+                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_4.png" alt="">
                   <div class="card_hover">
                     <ul>
                       <li>web design</li>
@@ -2300,7 +2352,7 @@ get_header();
 
                 <a href="<?php echo get_template_directory_uri(); ?>/img/web/web_5.jpg" data-fslightbox="web"
                   data-modal="web_popup_5" class="card web">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_5.png" alt="">
+                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_5.png" alt="">
                   <div class="card_hover">
                     <ul>
                       <li>Web design</li>
@@ -2314,7 +2366,7 @@ get_header();
             <div class="aside_wrapper">
               <a href="<?php echo get_template_directory_uri(); ?>/img/web/web_3.jpg" data-fslightbox="web"
                 data-modal="web_popup_3" class="card graphic">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_3.png" alt="">
+                <img data-src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_3.png" alt="">
                 <div class="card_hover">
                   <ul>
                     <li>web design</li>
@@ -2326,7 +2378,7 @@ get_header();
 
               <a href="<?php echo get_template_directory_uri(); ?>/img/web/web_6.jpg" data-fslightbox="web"
                 data-modal="web_popup_6" class="card web">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_6.png" alt="">
+                <img data-src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_6.png" alt="">
                 <div class="card_hover">
                   <ul>
                     <li>Web design</li>
@@ -2344,7 +2396,7 @@ get_header();
                 <div class="top_wrapper">
                   <a href="<?php echo get_template_directory_uri(); ?>/img/web/web_7.jpg" data-fslightbox="web"
                     data-modal="web_popup_7" class="card branding">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_7.png" alt="">
+                    <img data-src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_7.png" alt="">
                     <div class="card_hover">
                       <ul>
                         <li>web design</li>
@@ -2356,7 +2408,7 @@ get_header();
 
                   <a href="<?php echo get_template_directory_uri(); ?>/img/web/web_8.jpg" data-fslightbox="web"
                     data-modal="web_popup_8" class="card branding">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_8.png" alt="">
+                    <img data-src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_8.png" alt="">
                     <div class="card_hover">
                       <ul>
                         <li>web design</li>
@@ -2371,7 +2423,7 @@ get_header();
                   <div class="bottom_wrapper_10_11">
                     <a href="<?php echo get_template_directory_uri(); ?>/img/web/web_10.png" data-fslightbox="web"
                       data-modal="web_popup_10" class="card brand_card_10">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_10.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_10.png" alt="">
                       <div class="card_hover">
                         <ul>
                           <li>web design</li>
@@ -2383,7 +2435,7 @@ get_header();
 
                     <a href="<?php echo get_template_directory_uri(); ?>/img/web/web_11.jpg" data-fslightbox="web"
                       data-modal="web_popup_11" class="card">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_11.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_11.png" alt="">
                       <div class="card_hover">
                         <ul>
                           <li>web design</li>
@@ -2396,7 +2448,7 @@ get_header();
                   <div class="bottom_wrapper_13_14">
                     <a href="<?php echo get_template_directory_uri(); ?>/img/web/web_13.jpg" data-fslightbox="web"
                       data-modal="web_popup_13" class="card">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_13.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_13.png" alt="">
                       <div class="card_hover">
                         <ul>
                           <li>web design</li>
@@ -2408,7 +2460,7 @@ get_header();
 
                     <a href="<?php echo get_template_directory_uri(); ?>/img/web/web_14.png" data-fslightbox="web"
                       data-modal="web_popup_14" class="card">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_14.png" alt="">
+                      <img data-src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_14.png" alt="">
                       <div class="card_hover">
                         <ul>
                           <li>web design</li>
@@ -2424,7 +2476,7 @@ get_header();
                 <div class="aside_wrapper_9_12">
                   <a href="<?php echo get_template_directory_uri(); ?>/img/web/web_9.jpg" data-fslightbox="web"
                     data-modal="web_popup_9" class="card graphic">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_9.png" alt="">
+                    <img data-src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_9.png" alt="">
                     <div class="card_hover">
                       <ul>
                         <li>web design</li>
@@ -2436,7 +2488,7 @@ get_header();
 
                   <a href="<?php echo get_template_directory_uri(); ?>/img/web/web_12.jpg" data-fslightbox="web"
                     data-modal="web_popup_12" class="card brand_card_12">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_12.png" alt="">
+                    <img data-src="<?php echo get_template_directory_uri(); ?>/img/web/prev_web_12.png" alt="">
                     <div class="card_hover">
                       <ul>
                         <li>web design</li>
@@ -2464,12 +2516,12 @@ get_header();
                           </svg>
                         </div>
                         <a class="popup_close" href="##">
-                          <img src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
+                          <img data-src="<?php echo get_template_directory_uri(); ?>/img/close.png" alt="">
                         </a>
                       </div>
                       <div class="popup_content">
                         <div class="popup_img">
-                          <img src="<?php echo get_template_directory_uri(); ?>/img/web/web_12.jpg" alt="sort1">
+                          <img data-src="<?php echo get_template_directory_uri(); ?>/img/web/web_12.jpg" alt="sort1">
                         </div>
                       </div>
                     </div>
@@ -2497,11 +2549,11 @@ get_header();
         </div>
         <nav>
 
-          <div class="burger">
+          <div class="burger" data-id="menu_8">
             <p>menu</p>
-            <span></span>
+            <img data-src="/wp-content/uploads/2022/07/burger_lines.png" alt="burger"><span></span>
           </div>
-          <div class="burger_content">
+          <div class="burger_content" data-id="menu_8">
             <div class="burger_content_wrapper">
               <div class="burger_info">
                 <div class="container">
@@ -2526,7 +2578,7 @@ get_header();
                     <div class="burger_info_text">
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(22); ?>">
                             <li>Graphic design</li>
                           </a>
                         </ul>
@@ -2539,7 +2591,7 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
+                          <a href="<?php the_permalink(24); ?>">
                             <li>Web-design</li>
                           </a>
                         </ul>
@@ -2552,8 +2604,8 @@ get_header();
 
                       <div>
                         <ul>
-                          <a href="##">
-                            <li>Branding</li>
+                          <a href="<?php the_permalink(17); ?>">
+                            <li>Illustration</li>
                           </a>
                         </ul>
                         <p>brandbook</p>
@@ -2580,7 +2632,7 @@ get_header();
                           fill="black" />
                       </svg>
                     </a>
-                    <a href="tel:+380997101033">
+                    <a href="https://api.whatsapp.com/send?phone=380997101033" target="_blank">
                       <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M38 9.25C32 -5.96046e-07 19.75 -2.75 10.25 3C0.999998 8.75 -2 21.25 4 30.5L4.5 31.25L2.5 38.75L10 36.75L10.75 37.25C14 39 17.5 40 21 40C24.75 40 28.5 39 31.75 37C41 31 43.75 18.75 38 9.25ZM32.75 28.5C31.75 30 30.5 31 28.75 31.25C27.75 31.25 26.5 31.75 21.5 29.75C17.25 27.75 13.75 24.5 11.25 20.75C9.75 19 9 16.75 8.75 14.5C8.75 12.5 9.5 10.75 10.75 9.5C11.25 9 11.75 8.75 12.25 8.75H13.5C14 8.75 14.5 8.75 14.75 9.75C15.25 11 16.5 14 16.5 14.25C16.75 14.5 16.75 15 16.5 15.25C16.75 15.75 16.5 16.25 16.25 16.5C16 16.75 15.75 17.25 15.5 17.5C15 17.75 14.75 18.25 15 18.75C16 20.25 17.25 21.75 18.5 23C20 24.25 21.5 25.25 23.25 26C23.75 26.25 24.25 26.25 24.5 25.75C24.75 25.25 26 24 26.5 23.5C27 23 27.25 23 27.75 23.25L31.75 25.25C32.25 25.5 32.75 25.75 33 26C33.25 26.75 33.25 27.75 32.75 28.5Z"
@@ -2599,23 +2651,11 @@ get_header();
                   </div>
                 </div>
               </div>
-              <div class="mobile_burger_logo">
-                <svg viewBox="0 0 375 123" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M-8 2.99453H56.0252C70.5004 2.99453 83.2436 5.67714 94.2547 11.0424C105.389 16.2828 113.988 23.8315 120.05 33.6885C126.236 43.5455 129.329 55.1494 129.329 68.5C129.329 81.8506 126.236 93.4545 120.05 103.311C113.988 113.168 105.389 120.78 94.2547 126.145C83.2436 131.385 70.5004 134.005 56.0252 134.005H-8V2.99453ZM54.1694 99.5683C63.5721 99.5683 71.0572 96.8857 76.6246 91.5205C82.3157 86.0305 85.1613 78.357 85.1613 68.5C85.1613 58.643 82.3157 51.0319 76.6246 45.6667C71.0572 40.1767 63.5721 37.4317 54.1694 37.4317H35.7969V99.5683H54.1694Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M231.245 64.944H269.289V120.343C261.618 125.708 252.71 129.826 242.565 132.695C232.42 135.565 222.461 137 212.687 137C198.83 137 186.396 134.13 175.385 128.391C164.374 122.526 155.714 114.416 149.404 104.06C143.218 93.5792 140.125 81.7259 140.125 68.5C140.125 55.2741 143.218 43.4831 149.404 33.127C155.714 22.6462 164.436 14.536 175.571 8.79645C186.829 2.93215 199.511 0 213.615 0C226.358 0 237.74 2.18351 247.761 6.55054C257.906 10.7928 266.319 17.0314 273 25.2664L244.978 50.1585C236.812 40.551 227.1 35.7473 215.842 35.7473C206.191 35.7473 198.521 38.6794 192.83 44.5437C187.139 50.408 184.293 58.3934 184.293 68.5C184.293 78.357 187.077 86.2801 192.644 92.2691C198.335 98.2582 205.882 101.253 215.285 101.253C220.852 101.253 226.172 100.192 231.245 98.071V64.944Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                  <path
-                    d="M416 2.99453V134.005H379.997L330.633 74.4891V134.005H287.95V2.99453H323.952L373.317 62.5109V2.99453H416Z"
-                    fill="#FBFBFB" fill-opacity="0.05" />
-                </svg>
-              </div>
+
             </div>
 
           </div>
-          <a href="#form">get consultation</a>
+          <a href="#page8">get consultation</a>
         </nav>
       </div>
       <div class="contact_wrapper">
@@ -2661,6 +2701,20 @@ get_header();
           <button class="submitBtn" type="submit">GET A FREE CONSULTATION</button>
         </form>
 
+        <div class="thank_you_modal">
+            <div class="thank_you_modal_content">
+              <div class="close_modal">
+                <img data-src="/wp-content/uploads/2022/07/close_thank_you_modal.png" alt="">
+              </div>
+              <h1>.Thank you.</h1>
+              <p>We get your letter! <br>
+                 Nearest time we'll answer to you</p>
+              <div class="thank_you_modal_done">
+                <img data-src="/wp-content/uploads/2022/07/thank_you.png" alt="">
+              </div>
+            </div>
+          </div>
+
 
       </div>
     </div>
@@ -2670,8 +2724,8 @@ get_header();
     <footer>
       <div class="container">
         <div class="footer_links">
-          <a href="tel:+380997101033" target="_blank" title="+380997101033">Whatsapp</a>
-          <a href="mailto:sales@d-gn.com" target="_blank" title="sales@d-gn.com">sales@d-gn.com</a>
+          <a href="https://api.whatsapp.com/send?phone=380997101033" target="_blank" title="+380997101033">Whatsapp</a>
+          <a href="mailto:sales@d-gn.com" title="sales@d-gn.com">sales@d-gn.com</a>
           <a href="https://www.facebook.com/Designers-102131022517952" target="_blank">Facebook</a>
         </div>
         <div class="privacy">

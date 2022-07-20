@@ -50,7 +50,7 @@ a:not([class]) {
 
 img {
   max-width: 100%;
-  display: block;
+  display: block !important;
 }
 
 article > * + * {
@@ -81,8 +81,6 @@ select {
   margin: 0 auto;
 }
 
-
-
 .scroll_btn {
   width: 2.5rem;
   height: 2.5rem;
@@ -95,7 +93,9 @@ select {
   justify-content: center;
   cursor: pointer;
   transition: .3s ease-in-out;
-  z-index: 1 !important;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
 }
 .scroll_btn:hover {
   background-color: #000;
@@ -104,6 +104,12 @@ select {
   transition: .3s ease-in-out;
   fill: transparent;
   stroke: #fff;
+}
+
+.show_top_btn {
+  opacity: 1;
+  visibility: visible;
+  transition: .3s ease-in-out;
 }
 
 
@@ -137,6 +143,8 @@ header {
 .header_wrapper nav a {
   text-decoration: none;
   color: #000;
+  width: 108%;
+  text-align: center;
   border: 3px solid #000;
   padding: .7rem 2rem;
   transition: .3s ease-in-out;
@@ -147,23 +155,31 @@ header {
 }
 .burger {
   position: relative;
-  width: 4.125rem;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   height: 1.375rem;
   cursor: pointer;
   z-index: 1;
-  margin-right: 4rem;
+  margin-right: 3rem;
 }
 
 .burger p {
   font-family: 'Montserrat', sans-serif;
-  margin-left: -5rem;
   line-height: .8;
+  pointer-events: none;
+  padding-right: 1.5rem;
+}
+
+.burger img {
+  pointer-events: none;
 }
 
 
 
 .lock {
-  overflow-y: hidden;
+  overflow: hidden !important;
 }
 
 .burger_content {
@@ -211,14 +227,14 @@ header {
 .burger_info::before {
   content: '';
   position: absolute;
-  display: inline-block;
+  display: block;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   height: 100%;
-  background-image: url('../img/footer_dgn.png');
-  background-repeat: no-repeat;
+  background: url('/wp-content/uploads/2022/07/burger-dgn.png') no-repeat bottom left;
   background-size: contain;
+  z-index: 1;
 }
 
 .burger_text_wrapper {
@@ -268,6 +284,7 @@ header {
   padding: 0;
   background-color: transparent !important;
   border: none;
+  display: contents !important;
 }
 
 
@@ -373,31 +390,6 @@ header {
   transform: rotate(-45deg);
 }
 
-
-.burger::after,
-.burger::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #000;
-}
-.burger::after {
-  top: 50%;
-  transform: translateY(-50%);
-}
-.burger::before {
-  top: 0;
-}
-.burger span {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 50%;
-  height: 4px;
-  background-color: #000;
-}
 .main_page_container {
   width: 100%;
 }
@@ -473,6 +465,10 @@ header {
   height: 8px;
   background-color: #000;
   border-radius: 50%;
+}
+.main_list li a {
+  text-decoration: none;
+  color: #000000;
 }
 .first_section {
   width: 100%;
@@ -571,7 +567,7 @@ header {
 .second_section {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 5;
 }
 
@@ -625,8 +621,8 @@ header {
   transform: translateY(-50%);
   left: -120%;
   width: 100%;
-  height: 15px;
-  background: url('../img/arrow.png') no-repeat;
+  height: 1rem;
+  background: url('../img/arrow.png') no-repeat top left;
   background-size: contain;
   z-index: 1;
   transition: .3s ease-in-out;
@@ -692,6 +688,7 @@ header {
 
 
 .graphic {
+  height: 100vh;
   background: radial-gradient(67.71% 213.99% at 3.85% 73.89%, #FFE779 1.77%, #FFDB33 95.02%);
 }
 .web {
@@ -738,14 +735,10 @@ header {
   justify-content: space-between;
 }
 
-.mobile_cards_price_wrapper {
+
+.mobile_slider {
   display: none;
 }
-
-.fp-slidesNav {
-  display: none;
-}
-
 
 .card_price {
   position: relative;
@@ -762,7 +755,7 @@ header {
   transform: scale(1.1);
 }
 .card_price:hover .price_link_image {
-  left: -3%;
+  left: -4%;
 }
 
 
@@ -779,7 +772,8 @@ header {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, .8);
+  background: rgba(61, 61, 61, 0.7);
+  backdrop-filter: blur(5px);
   z-index: 20;
   transition: .3s ease-in-out;
 }
@@ -792,31 +786,66 @@ header {
   width: 100%;
   height: 100%;
 }
+
 .card_price_modal_calendly_content {
   width: 100%;
   height: 100%;
   position: relative;
 }
+
+
 .calendly_close {
   position: absolute;
   top: 1rem;
   right: 2rem;
-  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  transition: .3s ease-in-out;
-  z-index: 21;
+  transition: .3s;
+  z-index: 25;
+  border-radius: 50%;
 }
 .calendly_close:hover {
-  transform: rotate(90deg);
+  background-color: rgba(233, 233, 233, 0.7);
 }
+.calendly_close span {
+  position: relative;
+  display: block;
+  width: 70%;
+  height: 70%;
+  z-index: 25;
+  pointer-events: none;
+}
+.calendly_close span::after,
+.calendly_close span::before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  background-size: contain;
+  z-index: 25;
+}
+
+.calendly_close span::before {
+  content: '';
+  top: 48%;
+  transform: rotate(45deg);
+}
+.calendly_close span::after {
+  content: '';
+  bottom: 48%;
+  transform: rotate(-45deg);
+}
+
 
 
 /* end calendly modal */
-
-
-
-
-
 
 
 .card_price_content {
@@ -1063,13 +1092,14 @@ header {
   transform: scale(1.1);
 }
 
-.brand_popup_19 {
+.brand_popup_19,
+.brand_popup_20 {
   display: block;
 }
 
 .portfolio_cards-default {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -1079,7 +1109,7 @@ header {
 } 
 .portfolio_cards-branding {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -1088,7 +1118,7 @@ header {
 }
 .portfolio_cards-graphic {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -1098,7 +1128,7 @@ header {
 }
 .portfolio_cards-web {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -1281,7 +1311,7 @@ header {
   display: block;
   position: absolute;
   width: 90%;
-  top: 132.9%;
+  top: 135.6%;
   right: 106%;
 }
 
@@ -1294,7 +1324,7 @@ header {
 }
 .card_graph_20 {
   display: block;
-  top: 131%;
+  top: 140%;
 }
 
 
@@ -1308,7 +1338,9 @@ header {
   width: 100%;
 }
 .bottom_wrapper_19 {
-  width: 70%;
+  width: 90%;
+  display: flex;
+  column-gap: 1.5rem;
 }
 
 
@@ -1325,11 +1357,20 @@ header {
   display: block;
 }
 
+.new_cards {
+  margin-bottom: 1.5rem;
+}
+
+.new_cards .aside_wrapper .card.web {
+  top: 109.4%;
+  height: 94%;
+}
+
 .branding_wrapper .more {
-  padding-bottom: 17rem;
+  padding-bottom: 26rem;
 }
 .graphic_wrapper .more {
-  padding-bottom: 23rem;
+  padding-bottom: 26rem;
 }
 
 .card_hover {
@@ -1661,7 +1702,7 @@ footer::after {
   height: 100%;
   background: url('../img/dgn.png') no-repeat left bottom;
   background-size: contain;
-  z-index: 1;
+  z-index: 0;
   opacity: .3;
 }
 
@@ -1686,7 +1727,7 @@ footer::after {
 }
 .privacy {
   position: relative;
-  z-index: 10;
+  z-index: 5;
 }
 .privacy p,
 .privacy a {
@@ -1701,4 +1742,74 @@ footer::after {
 }
 .privacy a:hover {
   text-decoration: underline;
+}
+
+
+.contact {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.thank_you_modal {
+  position: fixed;
+  top: 600%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(61, 61, 61, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s ease-in-out;
+}
+.thank_you_modal.active_modal {
+  opacity: 1;
+  visibility: visible;
+  transition: .3s ease-in-out;
+}
+
+.thank_you_modal_content {
+  position: relative;
+  z-index: 20;
+  background-color: #fff;
+  border-radius: 1.25rem;
+  width: 70%;
+  padding: 4.25rem 0 6.875rem;
+}
+.thank_you_modal_content h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(60px, 2vw, 90px);
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+.thank_you_modal_content p {
+  margin: 2rem 0 3rem;
+  font-style: normal;
+  font-weight: 300;
+  font-size: clamp(18px, 1.5vw, 32px);
+}
+.close_modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  transition: .3s;
+}
+.close_modal:hover {
+  transform: rotate(90deg);
+}
+.thank_you_modal_done {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.thank_you_modal_done img {
+  width: 80px;
+  height: 80px;
 }

@@ -1,0 +1,9 @@
+.main_info_text a::before {
+  content: '';
+  position: absolute;
+  left: -220%;
+  width: 200%;
+}
+.main_info_text a:hover::before {
+  left: -210%;
+}

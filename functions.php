@@ -146,6 +146,11 @@ function design_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// if (is_404()) {
+	// 	wp_enqueue_style( '404-styles', get_template_directory_uri() . '/css/404.css' );
+	// }
+
 }
 add_action( 'wp_enqueue_scripts', 'design_scripts' );
 
@@ -176,3 +181,71 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+
+
+
+
+// Не показывать версию WordPress и wlmanifest в коде
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wp_generator');
+
+//Json, rest-api, oembed
+add_filter( 'json_enabled', '__return_false' );
+add_filter( 'json_jsonp_enabled', '__return_false' );
+add_filter( 'rest_enabled', '__return_false' );
+add_filter( 'rest_jsonp_enabled', '__return_false' );
+
+// Редирект со страниц */wp-json
+function jsonredirect() {
+	if ( preg_match( '#\/wp-json\/.*?#', $_SERVER['REQUEST_URI'] ) ) {
+	wp_redirect( get_option( 'siteurl' ), 301 );
+	die();
+	}
+	}
+	add_action( 'template_redirect', 'jsonredirect' );
+
+// Удалить ссылки на xmlrpc и api в коде
+remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
+remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
+remove_action( 'template_redirect', 'rest_output_link_header', 11 );
+
+// Отключить фильтры rest api
+remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
+remove_action( 'auth_cookie_malformed', 'rest_cookie_collect_status' );
+remove_action( 'auth_cookie_expired', 'rest_cookie_collect_status' );
+remove_action( 'auth_cookie_bad_username', 'rest_cookie_collect_status' );
+remove_action( 'auth_cookie_bad_hash', 'rest_cookie_collect_status' );
+remove_action( 'auth_cookie_valid', 'rest_cookie_collect_status' );
+remove_filter( 'rest_authentication_errors', 'rest_cookie_check_errors', 100 );
+
+// Отключить события rest api
+remove_action( 'init', 'rest_api_init' );
+remove_action( 'rest_api_init', 'rest_api_default_filters', 10, 1 );
+remove_action( 'parse_request', 'rest_api_loaded' );
+
+// Отключить Embeds
+remove_action( 'rest_api_init', 'wp_oembed_register_route' );
+remove_filter( 'rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10, 4 );
+
+// Убрать ссылки на oembed в коде сайта
+remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+
+// Отключить Emojii (смайлики)
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+add_filter( 'tiny_mce_plugins', 'disable_wp_emojis_in_tinymce' );
+function disable_wp_emojis_in_tinymce( $plugins ) {
+if ( is_array( $plugins ) ) {
+return array_diff( $plugins, array( 'wpemoji' ) );
+} else {
+return array();
+}
+}

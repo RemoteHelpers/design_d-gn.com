@@ -88,6 +88,10 @@ p.main_subtitle {
   top: 300%;
 }
 
+.thank_you_modal {
+  top: 500%;
+}
+
 
 
 @media(max-width: 790px) {
