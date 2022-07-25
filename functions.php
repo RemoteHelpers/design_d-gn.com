@@ -249,3 +249,9 @@ return array_diff( $plugins, array( 'wpemoji' ) );
 return array();
 }
 }
+
+function wpassist_remove_block_library_css(){
+	wp_dequeue_style( 'wp-block-library-theme' );
+	wp_dequeue_style( 'wp-block-library' );
+	}
+	add_action( 'wp_enqueue_scripts', 'wpassist_remove_block_library_css' );

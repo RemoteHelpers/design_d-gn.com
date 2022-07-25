@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollingSpeed: 1000,
     licenseKey: '4358BF2E-3FE0429E-BF643872-85B662FF',
     scrollOverflow: true,
-    onLeave: function(origin, destination, direction, trigger){
+    onLeave: function (origin, destination, direction, trigger) {
       let leavingSection = this;
       const scrollTop = document.querySelector('.scroll_btn');
-      if(origin.index == 0 && direction =='down'){
+      if (origin.index == 0 && direction == 'down') {
         scrollTop.classList.add('show_top_btn');
       }
-      else if(origin.index == 1 && direction == 'up'){
+      else if (origin.index == 1 && direction == 'up') {
         scrollTop.classList.remove('show_top_btn');
       }
     }
@@ -52,9 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let currentBtn = item;
       let dataId = currentBtn.getAttribute('data-tab');
       let currentTab = document.querySelector(dataId);
-
-      console.log(currentTab);
-
+      
       if (!currentBtn.classList.contains('active')) {
         filterBtn.forEach(item => {
           item.classList.remove('active');
@@ -62,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
         tabsItems.forEach(item => {
           item.classList.remove('active');
         })
-
         currentBtn.classList.add('active');
         currentTab.classList.add('active')
       }
@@ -71,21 +68,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // more cads button in portfolio
   const moreBtn = document.querySelectorAll('.moreBtn'),
-    moreContent = document.querySelectorAll('.more');
+        portfolioCard = document.querySelectorAll('.portfolio_card');
 
-  moreBtn.forEach(btn => {
-    moreContent.forEach(item => {
-      const currentContent = item;
-      btn.addEventListener('click', () => {
-        currentContent.classList.toggle('active')
-        if (!currentContent.classList.contains('active')) {
-          btn.innerHTML = 'show more'
+  moreBtn.forEach(currentMoreBtn => {
+    currentMoreBtn.addEventListener('click', () => {
+      portfolioCard.forEach(item => {
+        item.classList.toggle('active');
+        if (item.classList.contains('active')) {
+          currentMoreBtn.innerHTML = 'show less';
         } else {
-          btn.innerHTML = 'show less'
+          currentMoreBtn.innerHTML = 'show more';
         }
       })
     })
   })
+
 
   const form = document.querySelector('#form'),
     jsInputs = form.querySelectorAll('.js_input'),
@@ -211,6 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
   burgerBtn.forEach(item => {
     item.addEventListener('click', e => {
       e.preventDefault();
+      console.log(item);
       const menuId = item.getAttribute('data-id');
       const burgerModal = document.querySelector('.burger_content[data-id="' + menuId + '"]');
       sectionSlide.forEach(item => {

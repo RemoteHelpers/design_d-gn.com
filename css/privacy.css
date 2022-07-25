@@ -96,7 +96,7 @@ header {
 
 .main_info {
   padding: 3rem 0;
-  text-align: justify;
+  text-align: left !important;
 }
 .main_info h1 {
   line-height: 3;

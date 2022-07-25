@@ -68,6 +68,10 @@
     justify-content: space-between;
     flex-direction: row;
     padding-top: 3rem;
+    overflow: hidden;
+  }
+  .burger_info_text {
+    overflow-y: scroll;
   }
   .burger_info_text ul li {
     line-height: 2;
@@ -110,8 +114,15 @@
   .filter_btn {
     padding: .5rem 1rem;
   }
-  .portfolio_cards {
-    margin: 2rem 0;
+
+  .portfolio_card {
+    width: calc(100% / 2 - .75rem);
+  }
+  .portfolio_wrapper  {
+    padding-bottom: 2rem;
+  }
+  .moreBtn {
+    margin: 0 auto;
   }
 
 
@@ -148,16 +159,6 @@
     background-color: #000;
   }
 
-
-
-
-
-
-
-
-
-
-
   .card_price_content h1 {
     margin: 0 0 2rem 0;
   }
@@ -191,13 +192,14 @@
     border-radius: 50%;
   }
   .main_page_container main {
-    row-gap: 2rem;
+    row-gap: 1rem;
+    height: 65vh;
   }
   .main_page_container main h1 {
-    margin: 3rem 0 1.5rem;
-  }
+    margin: 2rem 0 1.5rem;
+  } 
   .main_page_container main span {
-    margin-top: 4rem;
+    margin-top: 2rem;
   }
   .first_section::after {
     content: '';
@@ -258,7 +260,7 @@
     padding: 0;
   }
   header {
-    padding-top: 2.5rem;
+    padding-top: 1.5rem;
   }
   .burger::after,
   .burger::before {
@@ -272,55 +274,6 @@
     text-align: center;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
-  }
-  .aside_wrapper {
-    display: none;
-  }
-  .left_column_wrapper {
-    width: 100%;
-  }
-  .bottom_wrapper .card:first-child {
-    width: 100%;
-    align-self: flex-start;
-  }
-  .top_wrapper {
-    column-gap: .75rem;
-    margin-bottom: .75rem;
-  }
-  .bottom_wrapper {
-    column-gap: .75rem;
-  }
-  .left_column_wrapper .bottom_wrapper {
-    width: 100%;
-  }
-
-  .vertical_wrapper_portfolio {
-    row-gap: .75rem;
-  }
-  .bottom_wrapper_10_11 {
-    column-gap: .75rem;
-  }
-
-  .left_column_wrapper .bottom_wrapper {
-    row-gap: .75rem;
-  }
-  .bottom_wrapper_13_14 {
-    column-gap: .75rem;
-  }
-  .bottom_wrapper_16_17 {
-    column-gap: .75rem;
-    width: 100%;
-  }
-  .bottom_wrapper_16_17:last-child {
-    width: 100%;
-    align-self: flex-start;
-  }
-
-  .branding_wrapper .more {
-    padding: 0;
-  }
-  .graphic_wrapper .more {
-    padding: 0;
   }
 
   .thank_you_modal_content {
@@ -363,26 +316,10 @@
   .footer_links a {
     line-height: 2;
   }
-
-
-
-
-
-
-
+  .thank_you_modal_content {
+    width: 95%;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

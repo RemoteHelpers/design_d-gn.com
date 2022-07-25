@@ -7,15 +7,18 @@
  * @package design
  */
 
+  // styles-initialization
+	wp_register_style('styles', get_template_directory_uri().'/css/style.css', '', '0.0000', false);
+	wp_enqueue_style('styles');
 
-wp_register_style('styles', get_template_directory_uri().'/css/style.css', '', '0.0000', false);
-wp_enqueue_style('styles');
+  wp_register_style('404', get_template_directory_uri().'/css/404.css', '', '0.0000', false);
+  wp_enqueue_style('404');
 
-wp_register_style('404', get_template_directory_uri().'/css/404.css', '', '0.0000', false);
-wp_enqueue_style('404');
+  wp_register_style('media-styles', get_template_directory_uri().'/css/media.css', '', '0.0000', false);
+	wp_enqueue_style('media-styles');
 
-wp_register_style('media-styles', get_template_directory_uri().'/css/media.css', '', '0.0000', false);
-wp_enqueue_style('media-styles');
+  wp_register_script( 'scripts', get_template_directory_uri().'/js/script.js', '', '0.0000', false);
+	wp_enqueue_script( 'scripts' );
 
 get_header(); 
 ?>
@@ -29,17 +32,19 @@ get_header();
           </div>
           <nav>
 
-            <div class="burger">
+            <div class="burger" data-id="menu_1">
               <p>menu</p>
-              <span></span>
+              <img src="/wp-content/uploads/2022/07/burger.png" alt="burger">
             </div>
-            <div class="burger_content">
+
+            <div class="burger_content" data-id="menu_1">
               <div class="burger_content_wrapper">
                 <div class="burger_info">
                   <div class="container">
                     <div class="burger_info_top">
                       <div class="header_logo">
-                        <svg width="164" height="51" viewBox="0 0 164 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="164" height="51" viewBox="0 0 164 51" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
                           <rect width="164" height="51" fill="black" />
                           <path
                             d="M37 11.6339H50.5902C53.6628 11.6339 56.3677 12.2017 58.705 13.3374C61.0685 14.4467 62.8937 16.0446 64.1805 18.1311C65.4936 20.2177 66.1501 22.674 66.1501 25.5C66.1501 28.326 65.4936 30.7823 64.1805 32.8688C62.8937 34.9554 61.0685 36.5665 58.705 37.7022C56.3677 38.8115 53.6628 39.3661 50.5902 39.3661H37V11.6339ZM50.1963 32.0765C52.1922 32.0765 53.781 31.5086 54.9628 30.3729C56.1708 29.2108 56.7748 27.5865 56.7748 25.5C56.7748 23.4135 56.1708 21.8024 54.9628 20.6667C53.781 19.5046 52.1922 18.9235 50.1963 18.9235H46.2965V32.0765H50.1963Z"
@@ -56,10 +61,9 @@ get_header();
                     </div>
                     <div class="burger_text_wrapper">
                       <div class="burger_info_text">
-
                         <div>
                           <ul>
-                            <a href="##">
+                            <a href="<?php the_permalink(22); ?>">
                               <li>Graphic design</li>
                             </a>
                           </ul>
@@ -72,7 +76,7 @@ get_header();
 
                         <div>
                           <ul>
-                            <a href="##">
+                            <a href="<?php the_permalink(24); ?>">
                               <li>Web-design</li>
                             </a>
                           </ul>
@@ -85,8 +89,8 @@ get_header();
 
                         <div>
                           <ul>
-                            <a href="##">
-                              <li>Branding</li>
+                            <a href="<?php the_permalink(17); ?>">
+                              <li>Illustration</li>
                             </a>
                           </ul>
                           <p>brandbook</p>
@@ -99,7 +103,6 @@ get_header();
                     </div>
                   </div>
                 </div>
-
                 <div class="burger_media">
                   <div class="burger_media_wrapper">
                     <h1>Social Media.</h1>
@@ -113,7 +116,7 @@ get_header();
                             fill="black" />
                         </svg>
                       </a>
-                      <a href="tel:+380997101033">
+                      <a href="https://api.whatsapp.com/send?phone=380997101033" target="_blank">
                         <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M38 9.25C32 -5.96046e-07 19.75 -2.75 10.25 3C0.999998 8.75 -2 21.25 4 30.5L4.5 31.25L2.5 38.75L10 36.75L10.75 37.25C14 39 17.5 40 21 40C24.75 40 28.5 39 31.75 37C41 31 43.75 18.75 38 9.25ZM32.75 28.5C31.75 30 30.5 31 28.75 31.25C27.75 31.25 26.5 31.75 21.5 29.75C17.25 27.75 13.75 24.5 11.25 20.75C9.75 19 9 16.75 8.75 14.5C8.75 12.5 9.5 10.75 10.75 9.5C11.25 9 11.75 8.75 12.25 8.75H13.5C14 8.75 14.5 8.75 14.75 9.75C15.25 11 16.5 14 16.5 14.25C16.75 14.5 16.75 15 16.5 15.25C16.75 15.75 16.5 16.25 16.25 16.5C16 16.75 15.75 17.25 15.5 17.5C15 17.75 14.75 18.25 15 18.75C16 20.25 17.25 21.75 18.5 23C20 24.25 21.5 25.25 23.25 26C23.75 26.25 24.25 26.25 24.5 25.75C24.75 25.25 26 24 26.5 23.5C27 23 27.25 23 27.75 23.25L31.75 25.25C32.25 25.5 32.75 25.75 33 26C33.25 26.75 33.25 27.75 32.75 28.5Z"
@@ -127,27 +130,13 @@ get_header();
                             fill="black" />
                         </svg>
                       </a>
-
-
                     </div>
                   </div>
                 </div>
-                <div class="mobile_burger_logo">
-                  <svg viewBox="0 0 375 123" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M-8 2.99453H56.0252C70.5004 2.99453 83.2436 5.67714 94.2547 11.0424C105.389 16.2828 113.988 23.8315 120.05 33.6885C126.236 43.5455 129.329 55.1494 129.329 68.5C129.329 81.8506 126.236 93.4545 120.05 103.311C113.988 113.168 105.389 120.78 94.2547 126.145C83.2436 131.385 70.5004 134.005 56.0252 134.005H-8V2.99453ZM54.1694 99.5683C63.5721 99.5683 71.0572 96.8857 76.6246 91.5205C82.3157 86.0305 85.1613 78.357 85.1613 68.5C85.1613 58.643 82.3157 51.0319 76.6246 45.6667C71.0572 40.1767 63.5721 37.4317 54.1694 37.4317H35.7969V99.5683H54.1694Z"
-                      fill="#FBFBFB" fill-opacity="0.05" />
-                    <path
-                      d="M231.245 64.944H269.289V120.343C261.618 125.708 252.71 129.826 242.565 132.695C232.42 135.565 222.461 137 212.687 137C198.83 137 186.396 134.13 175.385 128.391C164.374 122.526 155.714 114.416 149.404 104.06C143.218 93.5792 140.125 81.7259 140.125 68.5C140.125 55.2741 143.218 43.4831 149.404 33.127C155.714 22.6462 164.436 14.536 175.571 8.79645C186.829 2.93215 199.511 0 213.615 0C226.358 0 237.74 2.18351 247.761 6.55054C257.906 10.7928 266.319 17.0314 273 25.2664L244.978 50.1585C236.812 40.551 227.1 35.7473 215.842 35.7473C206.191 35.7473 198.521 38.6794 192.83 44.5437C187.139 50.408 184.293 58.3934 184.293 68.5C184.293 78.357 187.077 86.2801 192.644 92.2691C198.335 98.2582 205.882 101.253 215.285 101.253C220.852 101.253 226.172 100.192 231.245 98.071V64.944Z"
-                      fill="#FBFBFB" fill-opacity="0.05" />
-                    <path
-                      d="M416 2.99453V134.005H379.997L330.633 74.4891V134.005H287.95V2.99453H323.952L373.317 62.5109V2.99453H416Z"
-                      fill="#FBFBFB" fill-opacity="0.05" />
-                  </svg>
-                </div>
               </div>
             </div>
-            <a href="#contact_id">get consultation</a>
+
+            <a href="/#page7">get consultation</a>
           </nav>
         </div>
         <div class="main_info_section_wrapper">
